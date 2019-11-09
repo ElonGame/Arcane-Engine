@@ -1,6 +1,7 @@
 #pragma once
 
 namespace arcane {
+	namespace editor {
 
 #define MAX_JOYSTICK_BUTTONS 18
 
@@ -25,32 +26,33 @@ namespace arcane {
 #define ARCANE_GAMEPAD_SQUARE   ARCANE_GAMEPAD_X
 #define ARCANE_GAMEPAD_TRIANGLE   ARCANE_GAMEPAD_Y
 
-	class JoystickInputData {
-		friend class JoystickManager;
-	public:
-		JoystickInputData(char id = 0);
-		~JoystickInputData();
+		class JoystickInputData {
+			friend class JoystickManager;
+		public:
+			JoystickInputData(char id = 0);
+			~JoystickInputData() = default;
 
-		void update();
+			void update();
 
-		inline void setConnection(bool isConnected) { m_Connected = isConnected; }
-		inline void setId(char id) { m_Id = id; }
-		inline void setDeadzone(float dead) { m_Deadzone = dead; }
-		inline char getNumButtons() { return m_NumButtons; }
-		inline glm::vec2& getLeftStick() { return m_LeftStick; }
-		inline glm::vec2& getRightStick() { return m_RightStick; }
-		inline glm::vec2& getTriggers() { return m_Triggers; }
-		inline bool isConnected() { return m_Connected; }
-	private:
-		unsigned char m_ButtonStates[MAX_JOYSTICK_BUTTONS];
+			inline void setConnection(bool isConnected) { m_Connected = isConnected; }
+			inline void setId(char id) { m_Id = id; }
+			inline void setDeadzone(float dead) { m_Deadzone = dead; }
+			inline char getNumButtons() { return m_NumButtons; }
+			inline glm::vec2& getLeftStick() { return m_LeftStick; }
+			inline glm::vec2& getRightStick() { return m_RightStick; }
+			inline glm::vec2& getTriggers() { return m_Triggers; }
+			inline bool isConnected() { return m_Connected; }
+		private:
+			unsigned char m_ButtonStates[MAX_JOYSTICK_BUTTONS];
 
-		bool m_Connected; 
-		char m_Id; 
-		int m_NumButtons; 
-		float m_Deadzone;
-		glm::vec2 m_LeftStick;
-		glm::vec2 m_RightStick;
-		glm::vec2 m_Triggers;
-	};
+			bool m_Connected;
+			char m_Id;
+			int m_NumButtons;
+			float m_Deadzone;
+			glm::vec2 m_LeftStick;
+			glm::vec2 m_RightStick;
+			glm::vec2 m_Triggers;
+		};
 
+	}
 }

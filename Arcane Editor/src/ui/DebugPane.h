@@ -9,7 +9,7 @@ namespace arcane {
 		public:
 			DebugPane(glm::vec2& panePosition);
 
-			virtual void setupPaneObjects();
+			virtual void setupPaneObjects() override;
 
 			static inline void bindFxaaEnabled(bool* ptr) { s_FxaaEnabled = ptr; }
 			static inline void bindCameraPositionValue(glm::vec3* ptr) { s_CameraPosition = ptr; }

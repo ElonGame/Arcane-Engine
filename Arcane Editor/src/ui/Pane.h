@@ -4,9 +4,11 @@
 
 namespace arcane {
 	namespace editor {
+
 		class Pane {
 		public:
 			Pane(std::string& paneName, glm::vec2& paneSize);
+			~Pane() = default;
 
 			void render();
 		protected:

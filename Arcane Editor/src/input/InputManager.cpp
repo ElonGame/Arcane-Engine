@@ -3,6 +3,7 @@
 
 namespace arcane {
 	namespace editor {
+
 		// Static declarations
 		bool InputManager::s_Keys[MAX_KEYS];
 		float InputManager::s_KeyPressure[MAX_KEYS];

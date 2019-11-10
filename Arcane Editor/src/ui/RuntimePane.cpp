@@ -8,8 +8,7 @@ namespace arcane {
 		float RuntimePane::s_SsaoTimer = 0.0f;
 		float RuntimePane::s_FxaaTimer = 0.0f;
 
-		RuntimePane::RuntimePane(glm::vec2& panePosition) : Pane(std::string("Runtime Analytics"), panePosition)
-		{
+		RuntimePane::RuntimePane(glm::vec2& panePosition) : Pane(std::string("Runtime Analytics"), panePosition) {
 		}
 
 		void RuntimePane::setupPaneObjects() {

@@ -3,9 +3,9 @@
 #include <Window.h>
 #include <graphics/renderer/MasterRenderer.h>
 #include <scene/Scene3D.h>
-#include <ui/DebugPane.h>
-#include <ui/RuntimePane.h>
 #include <utils/Time.h>
+#include <ui/RuntimePane.h>
+#include <ui/DebugPane.h>
 
 int main() {
 	// Prepare the engine
@@ -33,15 +33,15 @@ int main() {
 			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 #endif
 
-		arcane::Window::bind();
-		arcane::Window::clear();
+		arcane::editor::Window::bind();
+		arcane::editor::Window::clear();
 		ImGui_ImplGlfwGL3_NewFrame();
 
 		scene.onUpdate((float)deltaTime.getDeltaTime());
 		renderer.render();
 
 		// Display panes
-		arcane::Window::bind();
+		arcane::editor::Window::bind();
 		runtimePane.render();
 		debugPane.render();
 

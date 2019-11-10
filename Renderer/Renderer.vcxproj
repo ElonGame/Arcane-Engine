@@ -91,6 +91,9 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -103,6 +106,9 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -117,6 +123,9 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -133,6 +142,9 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -191,7 +203,6 @@
     <ClCompile Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\features\data\macros.cpp" />
     <ClCompile Include="Render\vendor\renderdoc-1.x\renderdoc\3rdparty\interceptor-lib\lib\X86\target_x86.cc" />
     <ClCompile Include="src\graphics\camera\CubemapCamera.cpp" />
-    <ClCompile Include="src\graphics\camera\FPSCamera.cpp" />
     <ClCompile Include="src\graphics\ibl\LightProbe.cpp" />
     <ClCompile Include="src\graphics\ibl\ProbeManager.cpp" />
     <ClCompile Include="src\graphics\ibl\ReflectionProbe.cpp" />
@@ -349,7 +360,6 @@
     <ClInclude Include="Render\vendor\renderdoc-1.x\renderdoc\3rdparty\interceptor-lib\lib\X86\target_x86.h" />
     <ClInclude Include="src\Defs.h" />
     <ClInclude Include="src\graphics\camera\CubemapCamera.h" />
-    <ClInclude Include="src\graphics\camera\FPSCamera.h" />
     <ClInclude Include="src\graphics\camera\ICamera.h" />
     <ClInclude Include="src\graphics\ibl\LightProbe.h" />
     <ClInclude Include="src\graphics\ibl\ProbeManager.h" />

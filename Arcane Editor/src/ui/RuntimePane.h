@@ -4,11 +4,12 @@
 
 namespace arcane {
 	namespace editor {
+
 		class RuntimePane : public Pane {
 		public:
 			RuntimePane(glm::vec2& panePosition);
 
-			virtual void setupPaneObjects();
+			virtual void setupPaneObjects() override;
 
 			static inline float getShadowmapTimer() { return s_ShadowmapTimer; }
 			static inline float getSsaoTimer() { return s_SsaoTimer; }

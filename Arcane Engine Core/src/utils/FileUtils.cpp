@@ -2,13 +2,13 @@
 #include "FileUtils.h"
 
 namespace arcane {
+	namespace engine {
+		std::string FileUtils::readFile(const char* filepath) {
+			std::ifstream ifs(filepath);
+			std::string result((std::istreambuf_iterator<char>(ifs)),
+				(std::istreambuf_iterator<char>()));
 
-	std::string FileUtils::readFile(const char *filepath) {
-		std::ifstream ifs(filepath);
-		std::string result((std::istreambuf_iterator<char>(ifs)),
-			(std::istreambuf_iterator<char>()));
-
-		return result;
+			return result;
+		}
 	}
-
 }

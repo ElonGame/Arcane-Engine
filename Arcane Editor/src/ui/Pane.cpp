@@ -3,6 +3,7 @@
 
 namespace arcane {
 	namespace editor {
+
 		Pane::Pane(std::string& paneName, glm::vec2& paneSize) : m_PaneName(paneName), m_PaneSize(paneSize) {
 		}
 

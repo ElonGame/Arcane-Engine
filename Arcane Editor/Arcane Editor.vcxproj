@@ -71,19 +71,27 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <SourcePath>$(SourcePath)</SourcePath>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(projectDir)src</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(projectDir)src;$(solutionDir)Renderer\src;$(solutionDir)Arcane Engine Core\src</IncludePath>
+    <ExecutablePath> </ExecutablePath>
+    <LibraryPath>$(SolutionDir)Dependencies\GLFW\lib-vc2013;$(SolutionDir)Dependencies\GLEW\lib;$(SolutionDir)Dependencies\SOIL\lib;$(SolutionDir)Dependencies\Assimp\lib;$(SolutionDir)Dependencies\FreeType\lib;$(SolutionDir)Dependencies\FreeType-GL\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <SourcePath>$(SourcePath)</SourcePath>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(projectDir)src</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(projectDir)src;$(solutionDir)Renderer\src;$(solutionDir)Arcane Engine Core\src</IncludePath>
+    <ExecutablePath> </ExecutablePath>
+    <LibraryPath>$(SolutionDir)Dependencies\GLFW\lib-vc2013;$(SolutionDir)Dependencies\GLEW\lib;$(SolutionDir)Dependencies\SOIL\lib;$(SolutionDir)Dependencies\Assimp\lib;$(SolutionDir)Dependencies\FreeType\lib;$(SolutionDir)Dependencies\FreeType-GL\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <SourcePath>$(SourcePath)</SourcePath>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(projectDir)src</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(projectDir)src;$(solutionDir)Renderer\src;$(solutionDir)Arcane Engine Core\src</IncludePath>
+    <ExecutablePath> </ExecutablePath>
+    <LibraryPath>$(SolutionDir)Dependencies\GLFW\lib-vc2013;$(SolutionDir)Dependencies\GLEW\lib;$(SolutionDir)Dependencies\SOIL\lib;$(SolutionDir)Dependencies\Assimp\lib;$(SolutionDir)Dependencies\FreeType\lib;$(SolutionDir)Dependencies\FreeType-GL\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <SourcePath>$(SourcePath)</SourcePath>
-    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(projectDir)src</IncludePath>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(projectDir)src;$(solutionDir)Renderer\src;$(solutionDir)Arcane Engine Core\src</IncludePath>
+    <ExecutablePath> </ExecutablePath>
+    <LibraryPath>$(SolutionDir)Dependencies\GLFW\lib-vc2013;$(SolutionDir)Dependencies\GLEW\lib;$(SolutionDir)Dependencies\SOIL\lib;$(SolutionDir)Dependencies\Assimp\lib;$(SolutionDir)Dependencies\FreeType\lib;$(SolutionDir)Dependencies\FreeType-GL\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -150,10 +158,10 @@
     <ClCompile Include="Editor\vendor\imgui\imgui_impl_glfw_gl3.cpp" />
     <ClCompile Include="Editor\vendor\imgui\main.cpp" />
     <ClCompile Include="Editor\Window.cpp" />
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="src\input\InputManager.cpp" />
     <ClCompile Include="src\input\JoystickInputData.cpp" />
     <ClCompile Include="src\input\JoystickManager.cpp" />
+    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ui\DebugPane.cpp" />
     <ClCompile Include="src\ui\Pane.cpp" />
     <ClCompile Include="src\ui\RuntimePane.cpp" />

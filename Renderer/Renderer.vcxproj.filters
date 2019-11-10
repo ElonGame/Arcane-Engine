@@ -1,0 +1,959 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Render\graphics\camera\CubemapCamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\camera\FPSCamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\ibl\LightProbe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\ibl\ProbeManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\ibl\ReflectionProbe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\lights\DirectionalLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\lights\DynamicLightManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\lights\Light.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\lights\PointLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\lights\SpotLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\mesh\common\Cube.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\mesh\common\Quad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\mesh\common\Sphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\mesh\Material.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\mesh\Mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\mesh\Model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\renderer\renderpass\deferred\DeferredGeometryPass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\renderer\renderpass\deferred\DeferredLightingPass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\renderer\renderpass\deferred\PostGBufferForwardPass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\renderer\renderpass\forward\ForwardLightingPass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\renderer\renderpass\forward\ForwardProbePass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\renderer\renderpass\PostProcessPass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\renderer\renderpass\RenderPass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\renderer\renderpass\ShadowmapPass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\renderer\GLCache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\renderer\MasterRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\renderer\ModelRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\texture\Cubemap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\texture\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\graphics\Skybox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\platform\OpenGL\Framebuffers\Framebuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\platform\OpenGL\Framebuffers\GBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\platform\OpenGL\Buffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\platform\OpenGL\IndexBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\platform\OpenGL\VertexArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\scene\RenderableModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\scene\Scene3D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\terrain\Terrain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\utils\Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\utils\Time.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\utils\Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-arm-amlogic-8726M-g++\qeglfshooks_8726m.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-mipsel-broadcom-97425-g++\qdirectfbeglhooks_bcm97425.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\features\data\dummy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\features\data\macros.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\vendor\renderdoc-1.x\renderdoc\3rdparty\interceptor-lib\lib\X86\target_x86.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\camera\CubemapCamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\camera\FPSCamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\ibl\LightProbe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\ibl\ProbeManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\ibl\ReflectionProbe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\lights\DirectionalLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\lights\DynamicLightManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\lights\Light.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\lights\PointLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\lights\SpotLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\mesh\common\Cube.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\mesh\common\Quad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\mesh\common\Sphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\mesh\Material.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\mesh\Mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\mesh\Model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\renderer\renderpass\deferred\DeferredGeometryPass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\renderer\renderpass\deferred\DeferredLightingPass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\renderer\renderpass\deferred\PostGBufferForwardPass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\renderer\renderpass\forward\ForwardLightingPass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\renderer\renderpass\forward\ForwardProbePass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\renderer\renderpass\PostProcessPass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\renderer\renderpass\RenderPass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\renderer\renderpass\ShadowmapPass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\renderer\GLCache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\renderer\MasterRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\renderer\ModelRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\texture\Cubemap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\texture\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\graphics\Skybox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\OpenGL\Framebuffers\Framebuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\OpenGL\Framebuffers\GBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\OpenGL\Buffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\OpenGL\IndexBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\OpenGL\VertexArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\RenderableModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scene\Scene3D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\terrain\Terrain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils\Logger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils\Time.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils\Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-arm-amlogic-8726M-g++\qeglfshooks_8726m.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-mipsel-broadcom-97425-g++\qdirectfbeglhooks_bcm97425.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\features\data\dummy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\features\data\macros.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vendor\renderdoc-1.x\renderdoc\3rdparty\interceptor-lib\lib\X86\target_x86.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Render\graphics\camera\CubemapCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\camera\FPSCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\camera\ICamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\ibl\LightProbe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\ibl\ProbeManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\ibl\ReflectionProbe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\lights\DirectionalLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\lights\DynamicLightManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\lights\Light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\lights\PointLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\lights\SpotLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\mesh\common\Cube.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\mesh\common\Quad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\mesh\common\Sphere.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\mesh\Material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\mesh\Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\mesh\Model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\renderer\renderpass\deferred\DeferredGeometryPass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\renderer\renderpass\deferred\DeferredLightingPass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\renderer\renderpass\deferred\PostGBufferForwardPass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\renderer\renderpass\forward\ForwardLightingPass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\renderer\renderpass\forward\ForwardProbePass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\renderer\renderpass\PostProcessPass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\renderer\renderpass\RenderPass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\renderer\renderpass\RenderPassType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\renderer\renderpass\ShadowmapPass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\renderer\GLCache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\renderer\MasterRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\renderer\ModelRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\texture\Cubemap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\texture\Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\graphics\Skybox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\platform\OpenGL\Framebuffers\Framebuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\platform\OpenGL\Framebuffers\GBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\platform\OpenGL\Buffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\platform\OpenGL\IndexBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\platform\OpenGL\VertexArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\scene\RenderableModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\scene\Scene3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\terrain\Terrain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\utils\Logger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\utils\Singleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\utils\Time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\utils\Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\aix\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\android\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\bsd\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\c89\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\integrity\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\mac\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\nacl\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\posix\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\qnx\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\uikit\GLES2\gl2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\winrt_winphone\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\cygwin-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\darwin-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\freebsd-generic-clang\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\freebsd-rasp-pi-clang\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\integrity-armv8-drive-cx\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\integrity-armv8-msm8996au\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-archos-gen8-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-arm-amlogic-8726M-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-arm-generic-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-arm-hisilicon-hix5hd2-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-arm-trident-pnx8473-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-beagleboard-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-colibri-vf-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-drive-cx-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-emu-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-generic-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-imx6-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-imx7-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-imx53qsb-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-jetson-tk1-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-jetson-tk1-pro-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-jetson-tx1-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-mipsel-broadcom-97425-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-mipsel-ci20-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-nuc-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-odroid-xu3-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-rasp-pi2-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-rasp-pi3-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-rasp-pi3-vc4-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-rasp-pi-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-rcar-h2-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-sh4-stmicro-ST7108-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-sh4-stmicro-ST7540-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-snowball-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-tegra2-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\unsupported\linux-host-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\unsupported\linux-scratchbox2-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\unsupported\nacl64-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\unsupported\nacl-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\unsupported\qnx-X11-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\unsupported\vxworks-ppc-dcc\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\unsupported\vxworks-ppc-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\unsupported\vxworks-simpentium-dcc\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\unsupported\vxworks-simpentium-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\win32-clang-msvc\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\win32-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\win32-icc\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\win32-msvc\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\vendor\renderdoc-1.x\renderdoc\3rdparty\interceptor-lib\lib\X86\target_x86.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\Defs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\camera\CubemapCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\camera\FPSCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\camera\ICamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\ibl\LightProbe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\ibl\ProbeManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\ibl\ReflectionProbe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\lights\DirectionalLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\lights\DynamicLightManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\lights\Light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\lights\PointLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\lights\SpotLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\mesh\common\Cube.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\mesh\common\Quad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\mesh\common\Sphere.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\mesh\Material.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\mesh\Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\mesh\Model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\renderer\renderpass\deferred\DeferredGeometryPass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\renderer\renderpass\deferred\DeferredLightingPass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\renderer\renderpass\deferred\PostGBufferForwardPass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\renderer\renderpass\forward\ForwardLightingPass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\renderer\renderpass\forward\ForwardProbePass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\renderer\renderpass\PostProcessPass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\renderer\renderpass\RenderPass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\renderer\renderpass\RenderPassType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\renderer\renderpass\ShadowmapPass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\renderer\GLCache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\renderer\MasterRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\renderer\ModelRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\texture\Cubemap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\texture\Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\graphics\Skybox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\OpenGL\Framebuffers\Framebuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\OpenGL\Framebuffers\GBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\OpenGL\Buffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\OpenGL\IndexBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\OpenGL\VertexArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\RenderableModel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scene\Scene3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\terrain\Terrain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\Logger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\Singleton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\Time.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils\Timer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\aix\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\android\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\bsd\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\c89\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\integrity\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\mac\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\nacl\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\posix\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\qnx\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\uikit\GLES2\gl2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\common\winrt_winphone\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\cygwin-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\darwin-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\freebsd-generic-clang\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\freebsd-rasp-pi-clang\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\integrity-armv8-drive-cx\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\integrity-armv8-msm8996au\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-archos-gen8-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-arm-amlogic-8726M-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-arm-generic-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-arm-hisilicon-hix5hd2-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-arm-trident-pnx8473-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-beagleboard-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-colibri-vf-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-drive-cx-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-emu-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-generic-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-imx6-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-imx7-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-imx53qsb-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-jetson-tk1-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-jetson-tk1-pro-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-jetson-tx1-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-mipsel-broadcom-97425-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-mipsel-ci20-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-nuc-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-odroid-xu3-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-rasp-pi2-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-rasp-pi3-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-rasp-pi3-vc4-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-rasp-pi-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-rcar-h2-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-sh4-stmicro-ST7108-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-sh4-stmicro-ST7540-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-snowball-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\devices\linux-tegra2-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\unsupported\linux-host-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\unsupported\linux-scratchbox2-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\unsupported\nacl64-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\unsupported\nacl-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\unsupported\qnx-X11-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\unsupported\vxworks-ppc-dcc\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\unsupported\vxworks-ppc-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\unsupported\vxworks-simpentium-dcc\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\unsupported\vxworks-simpentium-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\win32-clang-msvc\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\win32-g++\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\win32-icc\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\qt\x64\mkspecs\win32-msvc\qplatformdefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\renderdoc-1.x\renderdoc\3rdparty\interceptor-lib\lib\X86\target_x86.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Defs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Render\vendor\renderdoc-1.x\qrenderdoc\3rdparty\python\x64\python36.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="src\vendor\renderdoc-1.x\qrenderdoc\3rdparty\python\x64\python36.def">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

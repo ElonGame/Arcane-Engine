@@ -1,6 +1,6 @@
 #include "pch.h"
 
-#include <graphics/Window.h>
+#include <Window.h>
 #include <graphics/renderer/MasterRenderer.h>
 #include <scene/Scene3D.h>
 #include <ui/DebugPane.h>
@@ -9,15 +9,15 @@
 
 int main() {
 	// Prepare the engine
-	arcane::Window window("Arcane Engine", WINDOW_X_RESOLUTION, WINDOW_Y_RESOLUTION);
-	arcane::TextureLoader::initializeDefaultTextures();
+	arcane::editor::Window window("Arcane Engine", WINDOW_X_RESOLUTION, WINDOW_Y_RESOLUTION);
+	arcane::engine::TextureLoader::initializeDefaultTextures();
 	arcane::Scene3D scene(&window);
 	arcane::MasterRenderer renderer(&scene);
-	arcane::InputManager manager;
+	arcane::editor::InputManager manager;
 
 	// Prepare the UI
-	arcane::RuntimePane runtimePane(glm::vec2(270.0f, 100.0f));
-	arcane::DebugPane debugPane(glm::vec2(270.0f, 205.0f));
+	arcane::editor::RuntimePane runtimePane(glm::vec2(270.0f, 100.0f));
+	arcane::editor::DebugPane debugPane(glm::vec2(270.0f, 205.0f));
 
 	// Initialize the renderer
 	renderer.init();

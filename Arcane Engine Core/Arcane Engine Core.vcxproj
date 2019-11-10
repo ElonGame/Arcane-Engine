@@ -42,10 +42,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\SOIL\include;$(SolutionDir)Dependencies\GLM\include;$(SolutionDir)Dependencies\Assimp\include;$(SolutionDir)Dependencies\FreeType\include;$(SolutionDir)Dependencies\FreeType-GL\include;$(SolutionDir)Arcane Engine Core\src;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Dependencies\GLFW\lib-vc2013;$(SolutionDir)Dependencies\GLEW\lib;$(SolutionDir)Dependencies\SOIL\lib;$(SolutionDir)Dependencies\Assimp\lib;$(SolutionDir)Dependencies\FreeType\lib;$(SolutionDir)Dependencies\FreeType-GL\lib;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(projectDir)src;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\SOIL\include;$(SolutionDir)Dependencies\GLM\include;$(SolutionDir)Dependencies\Assimp\include;$(SolutionDir)Dependencies\FreeType\include;$(SolutionDir)Dependencies\FreeType-GL\include;$(SolutionDir)Arcane Engine Core\src;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Dependencies\GLFW\lib-vc2013;$(SolutionDir)Dependencies\GLEW\lib;$(SolutionDir)Dependencies\SOIL\lib;$(SolutionDir)Dependencies\Assimp\lib;$(SolutionDir)Dependencies\FreeType\lib;$(SolutionDir)Dependencies\FreeType-GL\lib;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(projectDir)src;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -111,11 +113,18 @@
     <ClCompile Include="src\graphics\renderer\renderpass\ShadowmapPass.cpp" />
     <ClCompile Include="src\input\InputManager.cpp" />
     <ClCompile Include="src\input\JoystickManager.cpp" />
-    <ClCompile Include="src\pch.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-    </ClCompile>
     <ClCompile Include="src\platform\OpenGL\Framebuffers\GBuffer.cpp" />
+    <ClCompile Include="src\Render\ui\DebugPane.cpp" />
+    <ClCompile Include="src\Render\ui\Pane.cpp" />
+    <ClCompile Include="src\Render\ui\RuntimePane.cpp" />
+    <ClCompile Include="src\Render\utils\loaders\MeshLoader.cpp" />
+    <ClCompile Include="src\Render\utils\loaders\ShaderLoader.cpp" />
+    <ClCompile Include="src\Render\utils\loaders\TextureLoader.cpp" />
+    <ClCompile Include="src\Render\vendor\imgui\imgui.cpp" />
+    <ClCompile Include="src\Render\vendor\imgui\imgui_demo.cpp" />
+    <ClCompile Include="src\Render\vendor\imgui\imgui_draw.cpp" />
+    <ClCompile Include="src\Render\vendor\imgui\imgui_impl_glfw_gl3.cpp" />
+    <ClCompile Include="src\Render\vendor\imgui\main.cpp" />
     <ClCompile Include="src\scene\RenderableModel.cpp" />
     <ClCompile Include="src\graphics\renderer\ModelRenderer.cpp" />
     <ClCompile Include="src\graphics\Shader.cpp" />
@@ -123,7 +132,6 @@
     <ClCompile Include="src\graphics\texture\Cubemap.cpp" />
     <ClCompile Include="src\graphics\texture\Texture.cpp" />
     <ClCompile Include="src\graphics\Window.cpp" />
-    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\platform\OpenGL\Buffer.cpp" />
     <ClCompile Include="src\platform\OpenGL\Framebuffers\Framebuffer.cpp" />
     <ClCompile Include="src\platform\OpenGL\IndexBuffer.cpp" />
@@ -162,7 +170,6 @@
     <ClInclude Include="src\graphics\renderer\renderpass\deferred\DeferredLightingPass.h" />
     <ClInclude Include="src\graphics\renderer\renderpass\deferred\PostGBufferForwardPass.h" />
     <ClInclude Include="src\input\JoystickInputData.h" />
-    <ClInclude Include="src\Defs.h" />
     <ClInclude Include="src\graphics\camera\FPSCamera.h" />
     <ClInclude Include="src\graphics\camera\CubemapCamera.h" />
     <ClInclude Include="src\graphics\camera\ICamera.h" />
@@ -189,8 +196,20 @@
     <ClInclude Include="src\graphics\renderer\renderpass\ShadowmapPass.h" />
     <ClInclude Include="src\input\InputManager.h" />
     <ClInclude Include="src\input\JoystickManager.h" />
-    <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\platform\OpenGL\Framebuffers\GBuffer.h" />
+    <ClInclude Include="src\Render\ui\DebugPane.h" />
+    <ClInclude Include="src\Render\ui\Pane.h" />
+    <ClInclude Include="src\Render\ui\RuntimePane.h" />
+    <ClInclude Include="src\Render\utils\loaders\MeshLoader.h" />
+    <ClInclude Include="src\Render\utils\loaders\ShaderLoader.h" />
+    <ClInclude Include="src\Render\utils\loaders\TextureLoader.h" />
+    <ClInclude Include="src\Render\vendor\imgui\imconfig.h" />
+    <ClInclude Include="src\Render\vendor\imgui\imgui.h" />
+    <ClInclude Include="src\Render\vendor\imgui\imgui_impl_glfw_gl3.h" />
+    <ClInclude Include="src\Render\vendor\imgui\imgui_internal.h" />
+    <ClInclude Include="src\Render\vendor\imgui\stb_rect_pack.h" />
+    <ClInclude Include="src\Render\vendor\imgui\stb_textedit.h" />
+    <ClInclude Include="src\Render\vendor\imgui\stb_truetype.h" />
     <ClInclude Include="src\scene\RenderableModel.h" />
     <ClInclude Include="src\graphics\renderer\ModelRenderer.h" />
     <ClInclude Include="src\graphics\renderer\renderpass\RenderPass.h" />

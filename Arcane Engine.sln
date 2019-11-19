@@ -4,12 +4,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Arcane Engine Core", "Arcane Engine Core\Arcane Engine Core.vcxproj", "{FDA7B389-08B8-4B2B-A0F9-1488FB7AAB92}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Arcane Editor", "Arcane Editor\Arcane Editor.vcxproj", "{4A7E3837-EC95-45AD-8F25-FFE30396A5B8}"
 	ProjectSection(ProjectDependencies) = postProject
 		{50A3BD10-1707-4BEE-BDAB-420EFB347D94} = {50A3BD10-1707-4BEE-BDAB-420EFB347D94}
-		{FDA7B389-08B8-4B2B-A0F9-1488FB7AAB92} = {FDA7B389-08B8-4B2B-A0F9-1488FB7AAB92}
+		{4A7E3837-EC95-45AD-8F25-FFE30396A5B8} = {4A7E3837-EC95-45AD-8F25-FFE30396A5B8}
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Arcane Editor", "Arcane Editor\Arcane Editor.vcxproj", "{4A7E3837-EC95-45AD-8F25-FFE30396A5B8}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Renderer", "Renderer\Renderer.vcxproj", "{50A3BD10-1707-4BEE-BDAB-420EFB347D94}"
 EndProject

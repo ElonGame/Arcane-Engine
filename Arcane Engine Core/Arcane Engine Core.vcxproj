@@ -113,6 +113,7 @@
     <ClCompile Include="src\graphics\renderer\renderpass\ShadowmapPass.cpp" />
     <ClCompile Include="src\input\InputManager.cpp" />
     <ClCompile Include="src\input\JoystickManager.cpp" />
+    <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\platform\OpenGL\Framebuffers\GBuffer.cpp" />
     <ClCompile Include="src\Render\ui\DebugPane.cpp" />
     <ClCompile Include="src\Render\ui\Pane.cpp" />

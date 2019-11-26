@@ -1,16 +1,17 @@
 #include "pch.h"
 
-#include <Window.h>
-#include <graphics/renderer/MasterRenderer.h>
-#include <scene/Scene3D.h>
-#include <utils/Time.h>
-#include <ui/RuntimePane.h>
-#include <ui/DebugPane.h>
+#include <editor/Window.h>
+#include <runtime/renderer/graphics/renderer/MasterRenderer.h>
+#include <runtime/renderer/scene/Scene3D.h>
+#include <runtime/renderer/utils/Time.h>
+#include <editor/ui/RuntimePane.h>
+#include <editor/ui/DebugPane.h>
+#include <editor/utils/loaders/TextureLoader.h>
 
 int main() {
 	// Prepare the engine
 	arcane::editor::Window window("Arcane Engine", WINDOW_X_RESOLUTION, WINDOW_Y_RESOLUTION);
-	arcane::engine::TextureLoader::initializeDefaultTextures();
+	arcane::editor::TextureLoader::initializeDefaultTextures();
 	arcane::Scene3D scene(&window);
 	arcane::MasterRenderer renderer(&scene);
 	arcane::editor::InputManager manager;

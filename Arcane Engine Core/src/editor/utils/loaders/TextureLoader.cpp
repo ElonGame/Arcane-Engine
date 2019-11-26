@@ -2,7 +2,7 @@
 #include "TextureLoader.h"
 
 namespace arcane {
-	namespace engine {
+	namespace editor {
 
 		// Static declarations
 		std::unordered_map<std::string, Texture*> TextureLoader::m_TextureCache;

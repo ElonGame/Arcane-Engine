@@ -1,15 +1,14 @@
 #pragma once
 
 #include "Shader.h"
-#include "Window.h"
 
-#include <graphics/camera/FPSCamera.h>
-#include <graphics/renderer/GLCache.h>
-#include <graphics/mesh/common/Cube.h>
-#include <platform/OpenGL/Buffer.h>
-#include <platform/OpenGL/IndexBuffer.h>
-#include <platform/OpenGL/VertexArray.h>
-#include <utils/loaders/TextureLoader.h>
+#include <runtime/renderer/graphics/camera/FPSCamera.h>
+#include <runtime/renderer/graphics/renderer/GLCache.h>
+#include <runtime/renderer/graphics/mesh/common/Cube.h>
+#include <runtime/renderer/platform/OpenGL/Buffer.h>
+#include <runtime/renderer/platform/OpenGL/IndexBuffer.h>
+#include <runtime/renderer/platform/OpenGL/VertexArray.h>
+#include <editor/utils/loaders/TextureLoader.h>
 
 namespace arcane {
 

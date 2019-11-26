@@ -1,9 +1,9 @@
 #pragma once
 
-#include <graphics/renderer/renderpass/RenderPass.h>
-#include <graphics/Shader.h>
-#include <scene/Scene3D.h>
-#include <utils/Timer.h>
+#include <runtime/renderer/graphics/renderer/renderpass/RenderPass.h>
+#include <runtime/renderer/graphics/Shader.h>
+#include <runtime/renderer/scene/Scene3D.h>
+#include <runtime/renderer/utils/Timer.h>
 
 namespace arcane {
 

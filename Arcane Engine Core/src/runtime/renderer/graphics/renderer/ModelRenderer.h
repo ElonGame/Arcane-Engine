@@ -2,12 +2,12 @@
 
 #include "GLCache.h"
 
-#include <scene/RenderableModel.h>
-#include <graphics/camera/FPSCamera.h>
-#include <graphics/mesh/Model.h>
-#include <graphics/mesh/common/Quad.h>
-#include <graphics/mesh/common/Cube.h>
-#include <graphics/renderer/renderpass/RenderPassType.h>
+#include <runtime/renderer/scene/RenderableModel.h>
+#include <runtime/renderer/graphics/camera/FPSCamera.h>
+#include <runtime/renderer/graphics/mesh/Model.h>
+#include <runtime/renderer/graphics/mesh/common/Quad.h>
+#include <runtime/renderer/graphics/mesh/common/Cube.h>
+#include <runtime/renderer/graphics/renderer/renderpass/RenderPassType.h>
 
 namespace arcane {
 

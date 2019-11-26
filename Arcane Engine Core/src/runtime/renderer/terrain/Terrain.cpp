@@ -120,36 +120,36 @@ namespace arcane {
 		TextureSettings srgbTextureSettings;
 		srgbTextureSettings.IsSRGB = true;
 
-		m_Textures[0] = TextureLoader::load2DTexture(std::string("res/terrain/grass/grassAlbedo.tga"), &srgbTextureSettings);
-		m_Textures[1] = TextureLoader::load2DTexture(std::string("res/terrain/dirt/dirtAlbedo.tga"), &srgbTextureSettings);
-		m_Textures[2] = TextureLoader::load2DTexture(std::string("res/terrain/branches/branchesAlbedo.tga"), &srgbTextureSettings);
-		m_Textures[3] = TextureLoader::load2DTexture(std::string("res/terrain/rock/rockAlbedo.tga"), &srgbTextureSettings);
-
-		m_Textures[4] = TextureLoader::load2DTexture(std::string("res/terrain/grass/grassNormal.tga"));
-		m_Textures[5] = TextureLoader::load2DTexture(std::string("res/terrain/dirt/dirtNormal.tga"));
-		m_Textures[6] = TextureLoader::load2DTexture(std::string("res/terrain/branches/branchesNormal.tga"));
-		m_Textures[7] = TextureLoader::load2DTexture(std::string("res/terrain/rock/rockNormal.tga"));
+		m_Textures[0] = editor::TextureLoader::load2DTexture(std::string("res/terrain/grass/grassAlbedo.tga"), &srgbTextureSettings);
+		m_Textures[1] = editor::TextureLoader::load2DTexture(std::string("res/terrain/dirt/dirtAlbedo.tga"), &srgbTextureSettings);
+		m_Textures[2] = editor::TextureLoader::load2DTexture(std::string("res/terrain/branches/branchesAlbedo.tga"), &srgbTextureSettings);
+		m_Textures[3] = editor::TextureLoader::load2DTexture(std::string("res/terrain/rock/rockAlbedo.tga"), &srgbTextureSettings);
+			
+		m_Textures[4] = editor::TextureLoader::load2DTexture(std::string("res/terrain/grass/grassNormal.tga"));
+		m_Textures[5] = editor::TextureLoader::load2DTexture(std::string("res/terrain/dirt/dirtNormal.tga"));
+		m_Textures[6] = editor::TextureLoader::load2DTexture(std::string("res/terrain/branches/branchesNormal.tga"));
+		m_Textures[7] = editor::TextureLoader::load2DTexture(std::string("res/terrain/rock/rockNormal.tga"));
 
 		// We do not want these texture treated as one channel so store it as RGB
 		TextureSettings textureSettings;
 		textureSettings.TextureFormat = GL_RGB;
 
-		m_Textures[8] = TextureLoader::load2DTexture(std::string("res/terrain/grass/grassRoughness.tga"), &textureSettings);
-		m_Textures[9] = TextureLoader::load2DTexture(std::string("res/terrain/dirt/dirtRoughness.tga"), &textureSettings);
-		m_Textures[10] = TextureLoader::load2DTexture(std::string("res/terrain/branches/branchesRoughness.tga"), &textureSettings);
-		m_Textures[11] = TextureLoader::load2DTexture(std::string("res/terrain/rock/rockRoughness.tga"), &textureSettings);
+		m_Textures[8] = editor::TextureLoader::load2DTexture(std::string("res/terrain/grass/grassRoughness.tga"), &textureSettings);
+		m_Textures[9] = editor::TextureLoader::load2DTexture(std::string("res/terrain/dirt/dirtRoughness.tga"), &textureSettings);
+		m_Textures[10] = editor::TextureLoader::load2DTexture(std::string("res/terrain/branches/branchesRoughness.tga"), &textureSettings);
+		m_Textures[11] = editor::TextureLoader::load2DTexture(std::string("res/terrain/rock/rockRoughness.tga"), &textureSettings);
 
-		m_Textures[12] = TextureLoader::load2DTexture(std::string("res/terrain/grass/grassMetallic.tga"), &textureSettings);
-		m_Textures[13] = TextureLoader::load2DTexture(std::string("res/terrain/dirt/dirtMetallic.tga"), &textureSettings);
-		m_Textures[14] = TextureLoader::load2DTexture(std::string("res/terrain/branches/branchesMetallic.tga"), &textureSettings);
-		m_Textures[15] = TextureLoader::load2DTexture(std::string("res/terrain/rock/rockMetallic.tga"), &textureSettings);
+		m_Textures[12] = editor::TextureLoader::load2DTexture(std::string("res/terrain/grass/grassMetallic.tga"), &textureSettings);
+		m_Textures[13] = editor::TextureLoader::load2DTexture(std::string("res/terrain/dirt/dirtMetallic.tga"), &textureSettings);
+		m_Textures[14] = editor::TextureLoader::load2DTexture(std::string("res/terrain/branches/branchesMetallic.tga"), &textureSettings);
+		m_Textures[15] = editor::TextureLoader::load2DTexture(std::string("res/terrain/rock/rockMetallic.tga"), &textureSettings);
 
-		m_Textures[16] = TextureLoader::load2DTexture(std::string("res/terrain/grass/grassAO.tga"), &textureSettings);
-		m_Textures[17] = TextureLoader::load2DTexture(std::string("res/terrain/dirt/dirtAO.tga"), &textureSettings);
-		m_Textures[18] = TextureLoader::load2DTexture(std::string("res/terrain/branches/branchesAO.tga"), &textureSettings);
-		m_Textures[19] = TextureLoader::load2DTexture(std::string("res/terrain/rock/rockAO.tga"), &textureSettings);
-
-		m_Textures[20] = TextureLoader::load2DTexture(std::string("res/terrain/blendMap.tga"), &textureSettings);
+		m_Textures[16] = editor::TextureLoader::load2DTexture(std::string("res/terrain/grass/grassAO.tga"), &textureSettings);
+		m_Textures[17] = editor::TextureLoader::load2DTexture(std::string("res/terrain/dirt/dirtAO.tga"), &textureSettings);
+		m_Textures[18] = editor::TextureLoader::load2DTexture(std::string("res/terrain/branches/branchesAO.tga"), &textureSettings);
+		m_Textures[19] = editor::TextureLoader::load2DTexture(std::string("res/terrain/rock/rockAO.tga"), &textureSettings);
+						
+		m_Textures[20] = editor::TextureLoader::load2DTexture(std::string("res/terrain/blendMap.tga"), &textureSettings);
 
 		m_Mesh = new Mesh(positions, uvs, normals, tangents, bitangents, indices);
 		m_Mesh->LoadData(true);

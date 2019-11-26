@@ -1,6 +1,6 @@
 #pragma once
 
-#include <utils/FileUtils.h>
+#include <editor/utils/FileUtils.h>
 
 namespace arcane {
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <graphics/Shader.h>
+#include <runtime/renderer/graphics/Shader.h>
 
 namespace arcane {
 

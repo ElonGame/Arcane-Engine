@@ -132,7 +132,7 @@ namespace arcane {
 
 			TextureSettings textureSettings;
 			textureSettings.IsSRGB = isSRGB;
-			return TextureLoader::load2DTexture(fileToSearch, &textureSettings);
+			return editor::TextureLoader::load2DTexture(fileToSearch, &textureSettings);
 		}
 
 		return nullptr;

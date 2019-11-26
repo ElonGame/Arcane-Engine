@@ -15,5 +15,4 @@ namespace arcane {
 
 		virtual void setPosition(const glm::vec3 &position) = 0;
 	};
-
 }

@@ -1,20 +1,24 @@
 #include "pch.h"
 #include "DeferredGeometryPass.h"
 
-#include <utils/loaders/ShaderLoader.h>
+#include <editor/utils/loaders/ShaderLoader.h>
+#include <editor/Window.h>
+
+#include <runtime/renderer/graphics/renderer/ModelRenderer.h>
+#include <runtime/renderer/terrain/Terrain.h>
 
 namespace arcane {
 
 	DeferredGeometryPass::DeferredGeometryPass(Scene3D *scene) : RenderPass(scene), m_AllocatedGBuffer(true) {
-		m_ModelShader = ShaderLoader::loadShader("src/shaders/deferred/pbr_model_geometry.vert", "src/shaders/deferred/pbr_model_geometry.frag");
-		m_TerrainShader = ShaderLoader::loadShader("src/shaders/deferred/pbr_terrain_geometry.vert", "src/shaders/deferred/pbr_terrain_geometry.frag");
+		m_ModelShader = editor::ShaderLoader::loadShader("src/shaders/deferred/pbr_model_geometry.vert", "src/shaders/deferred/pbr_model_geometry.frag");
+		m_TerrainShader = editor::ShaderLoader::loadShader("src/shaders/deferred/pbr_terrain_geometry.vert", "src/shaders/deferred/pbr_terrain_geometry.frag");
 
-		m_GBuffer = new GBuffer(Window::getResolutionWidth(), Window::getResolutionHeight());
+		m_GBuffer = new GBuffer(editor::Window::getResolutionWidth(), editor::Window::getResolutionHeight());
 	}
 
 	DeferredGeometryPass::DeferredGeometryPass(Scene3D *scene, GBuffer *customGBuffer) : RenderPass(scene), m_AllocatedGBuffer(false), m_GBuffer(customGBuffer) {
-		m_ModelShader = ShaderLoader::loadShader("src/shaders/deferred/pbr_model_geometry.vert", "src/shaders/deferred/pbr_model_geometry.frag");
-		m_TerrainShader = ShaderLoader::loadShader("src/shaders/deferred/pbr_terrain_geometry.vert", "src/shaders/deferred/pbr_terrain_geometry.frag");
+		m_ModelShader = editor::ShaderLoader::loadShader("src/shaders/deferred/pbr_model_geometry.vert", "src/shaders/deferred/pbr_model_geometry.frag");
+		m_TerrainShader = editor::ShaderLoader::loadShader("src/shaders/deferred/pbr_terrain_geometry.vert", "src/shaders/deferred/pbr_terrain_geometry.frag");
 	}
 
 	DeferredGeometryPass::~DeferredGeometryPass() {
@@ -79,5 +83,4 @@ namespace arcane {
 		passOutput.outputGBuffer = m_GBuffer;
 		return passOutput;
 	}
-
 }

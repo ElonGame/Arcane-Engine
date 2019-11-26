@@ -38,7 +38,7 @@ namespace arcane {
 
 		// Vertex Shader
 		unsigned int vertex = glCreateShader(GL_VERTEX_SHADER);
-		std::string vertSourceString = FileUtils::readFile(m_VertPath);
+		std::string vertSourceString = editor::FileUtils::readFile(m_VertPath);
 		const char *vertSource = vertSourceString.c_str();
 
 		glShaderSource(vertex, 1, &vertSource, NULL);
@@ -65,7 +65,7 @@ namespace arcane {
 
 		//Fragment Shader
 		unsigned int fragment = glCreateShader(GL_FRAGMENT_SHADER);
-		std::string fragSourceString = FileUtils::readFile(m_FragPath);
+		std::string fragSourceString = editor::FileUtils::readFile(m_FragPath);
 		const char *fragSource = fragSourceString.c_str();
 
 		glShaderSource(fragment, 1, &fragSource, NULL);
@@ -94,7 +94,7 @@ namespace arcane {
 		unsigned int geometry;
 		if (m_GeomPath != "") {
 			geometry = glCreateShader(GL_GEOMETRY_SHADER);
-			std::string geomSourceString = FileUtils::readFile(m_GeomPath);
+			std::string geomSourceString = editor::FileUtils::readFile(m_GeomPath);
 			const char *geomSource = geomSourceString.c_str();
 
 			glShaderSource(geometry, 1, &geomSource, NULL);
@@ -124,7 +124,7 @@ namespace arcane {
 		unsigned int hull;
 		if (m_HullShader != "") {
 			hull = glCreateShader(GL_TESS_CONTROL_SHADER);
-			std::string hullSourceString = FileUtils::readFile(m_HullShader);
+			std::string hullSourceString = editor::FileUtils::readFile(m_HullShader);
 			const char *hullSource = hullSourceString.c_str();
 
 			glShaderSource(hull, 1, &hullSource, NULL);
@@ -153,7 +153,7 @@ namespace arcane {
 		unsigned int domain;
 		if (m_DomainShader != "") {
 			domain = glCreateShader(GL_TESS_EVALUATION_SHADER);
-			std::string domainSourceString = FileUtils::readFile(m_DomainShader);
+			std::string domainSourceString = editor::FileUtils::readFile(m_DomainShader);
 			const char *domainSource = domainSourceString.c_str();
 
 			glShaderSource(domain, 1, &domainSource, NULL);

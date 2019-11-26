@@ -1,7 +1,7 @@
 #pragma once
 
 namespace arcane { 
-	namespace engine {
+	namespace editor {
 		class FileUtils {
 		public:
 			static std::string readFile(const char* filepath);

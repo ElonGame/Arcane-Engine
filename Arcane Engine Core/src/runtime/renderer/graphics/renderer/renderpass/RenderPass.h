@@ -2,7 +2,7 @@
 
 #include "RenderPassType.h"
 
-#include <scene/Scene3D.h>
+#include <runtime/renderer/scene/Scene3D.h>
 
 namespace arcane {
 

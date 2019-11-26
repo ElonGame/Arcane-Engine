@@ -1,14 +1,14 @@
 #pragma once
 
-#include <graphics/renderer/renderpass/deferred/DeferredGeometryPass.h>
-#include <graphics/renderer/renderpass/deferred/DeferredLightingPass.h>
-#include <graphics/renderer/renderpass/deferred/PostGBufferForwardPass.h>
-#include <graphics/renderer/renderpass/forward/ForwardProbePass.h>
-#include <graphics/renderer/renderpass/forward/ForwardLightingPass.h>
-#include <graphics/renderer/renderpass/PostProcessPass.h>
-#include <graphics/renderer/renderpass/ShadowmapPass.h>
-#include <scene/Scene3D.h>
-#include <utils/Timer.h>
+#include <runtime/renderer/graphics/renderer/renderpass/deferred/DeferredGeometryPass.h>
+#include <runtime/renderer/graphics/renderer/renderpass/deferred/DeferredLightingPass.h>
+#include <runtime/renderer/graphics/renderer/renderpass/deferred/PostGBufferForwardPass.h>
+#include <runtime/renderer/graphics/renderer/renderpass/forward/ForwardProbePass.h>
+#include <runtime/renderer/graphics/renderer/renderpass/forward/ForwardLightingPass.h>
+#include <runtime/renderer/graphics/renderer/renderpass/PostProcessPass.h>
+#include <runtime/renderer/graphics/renderer/renderpass/ShadowmapPass.h>
+#include <runtime/renderer/scene/Scene3D.h>
+#include <runtime/renderer/utils/Timer.h>
 
 namespace arcane
 {

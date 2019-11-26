@@ -1,8 +1,7 @@
 #include "pch.h"
 #include "Material.h"
 
-#include <graphics/Window.h>
-#include <ui/DebugPane.h>
+#include <editor/ui/DebugPane.h>
 
 namespace arcane {
 
@@ -24,7 +23,7 @@ namespace arcane {
 			m_AlbedoMap->bind(currentTextureUnit++);
 		}
 		else {
-			TextureLoader::getDefaultAlbedo()->bind(currentTextureUnit++);
+			editor::TextureLoader::getDefaultAlbedo()->bind(currentTextureUnit++);
 		}
 
 		shader->setUniform("material.texture_normal", currentTextureUnit);
@@ -32,7 +31,7 @@ namespace arcane {
 			m_NormalMap->bind(currentTextureUnit++);
 		}
 		else {
-			TextureLoader::getDefaultNormal()->bind(currentTextureUnit++);
+			editor::TextureLoader::getDefaultNormal()->bind(currentTextureUnit++);
 		}
 
 		shader->setUniform("material.texture_metallic", currentTextureUnit);
@@ -40,7 +39,7 @@ namespace arcane {
 			m_MetallicMap->bind(currentTextureUnit++);
 		}
 		else {
-			TextureLoader::getDefaultMetallic()->bind(currentTextureUnit++);
+			editor::TextureLoader::getDefaultMetallic()->bind(currentTextureUnit++);
 		}
 
 		shader->setUniform("material.texture_roughness", currentTextureUnit);
@@ -48,7 +47,7 @@ namespace arcane {
 			m_RoughnessMap->bind(currentTextureUnit++);
 		}
 		else {
-			TextureLoader::getDefaultRoughness()->bind(currentTextureUnit++);
+			editor::TextureLoader::getDefaultRoughness()->bind(currentTextureUnit++);
 		}
 
 		shader->setUniform("material.texture_ao", currentTextureUnit);
@@ -56,7 +55,7 @@ namespace arcane {
 			m_AmbientOcclusionMap->bind(currentTextureUnit++);
 		}
 		else {
-			TextureLoader::getDefaultAO()->bind(currentTextureUnit++);
+			editor::TextureLoader::getDefaultAO()->bind(currentTextureUnit++);
 		}
 
 		shader->setUniform("material.texture_displacement", currentTextureUnit);

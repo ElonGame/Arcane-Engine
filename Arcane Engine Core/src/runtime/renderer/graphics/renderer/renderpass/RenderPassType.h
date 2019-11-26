@@ -1,7 +1,7 @@
 #pragma once
 
-#include <platform/OpenGL/Framebuffers/Framebuffer.h>
-#include <platform/OpenGL/Framebuffers/GBuffer.h>
+#include <runtime/renderer/platform/OpenGL/Framebuffers/Framebuffer.h>
+#include <runtime/renderer/platform/OpenGL/Framebuffers/GBuffer.h>
 
 namespace arcane {
 

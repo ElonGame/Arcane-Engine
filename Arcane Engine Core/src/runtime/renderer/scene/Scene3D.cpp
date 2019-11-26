@@ -1,14 +1,14 @@
 #include "pch.h"
 #include "Scene3D.h"
 
-#include <graphics/mesh/Mesh.h>
-#include <graphics/mesh/common/Cube.h>
-#include <graphics/mesh/common/Sphere.h>
-#include <graphics/mesh/common/Quad.h>
+#include <runtime/renderer/graphics/mesh/Mesh.h>
+#include <runtime/renderer/graphics/mesh/common/Cube.h>
+#include <runtime/renderer/graphics/mesh/common/Sphere.h>
+#include <runtime/renderer/graphics/mesh/common/Quad.h>
 
 namespace arcane {
 
-	Scene3D::Scene3D(Window *window)
+	Scene3D::Scene3D(editor::Window *window)
 		: m_SceneCamera(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, 0.0f), m_ModelRenderer(getCamera()), m_Terrain(glm::vec3(0.0f, -20.0f, 0.0f)), m_ProbeManager(m_SceneProbeBlendSetting)
 	{
 		m_GLCache = GLCache::getInstance();
@@ -29,19 +29,19 @@ namespace arcane {
 
 		Model *window = new arcane::Model(Quad());
 		m_RenderableModels.push_back(new RenderableModel(glm::vec3(150.0f, 60.0f, 150.0f), glm::vec3(25.0f, 25.0f, 25.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::radians(-90.0f), window, nullptr, true, false));
-		window->getMeshes()[0].getMaterial().setAlbedoMap(TextureLoader::load2DTexture(std::string("res/textures/bricks2.jpg"), &srgbTextureSettings));
-		window->getMeshes()[0].getMaterial().setNormalMap(TextureLoader::load2DTexture(std::string("res/textures/bricks2_normal.jpg")));
-		window->getMeshes()[0].getMaterial().setRoughnessMap(TextureLoader::getWhiteTexture());
-		window->getMeshes()[0].getMaterial().setDisplacementMap(TextureLoader::load2DTexture(std::string("res/textures/bricks2_disp.jpg")));
+		window->getMeshes()[0].getMaterial().setAlbedoMap(editor::TextureLoader::load2DTexture(std::string("res/textures/bricks2.jpg"), &srgbTextureSettings));
+		window->getMeshes()[0].getMaterial().setNormalMap(editor::TextureLoader::load2DTexture(std::string("res/textures/bricks2_normal.jpg")));
+		window->getMeshes()[0].getMaterial().setRoughnessMap(editor::TextureLoader::getWhiteTexture());
+		window->getMeshes()[0].getMaterial().setDisplacementMap(editor::TextureLoader::load2DTexture(std::string("res/textures/bricks2_disp.jpg")));
 
 		Model *window2 = new arcane::Model(Quad());
 		m_RenderableModels.push_back(new RenderableModel(glm::vec3(150.0f, 60.0f, 205.0f), glm::vec3(25.0f, 25.0f, 25.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::radians(-90.0f), window2, nullptr, true, true));
-		window2->getMeshes()[0].getMaterial().setAlbedoMap(TextureLoader::load2DTexture(std::string("res/textures/Pebles_001_COLOR.png"), &srgbTextureSettings));
-		window2->getMeshes()[0].getMaterial().setMetallicMap(TextureLoader::load2DTexture(std::string("res/textures/Pebles_001_SPEC.png")));
-		window2->getMeshes()[0].getMaterial().setNormalMap(TextureLoader::load2DTexture(std::string("res/textures/Pebles_001_NRM.png")));
-		window2->getMeshes()[0].getMaterial().setAmbientOcclusionMap(TextureLoader::load2DTexture(std::string("res/textures/Pebles_001_OCC.png")));
-		window2->getMeshes()[0].getMaterial().setRoughnessMap(TextureLoader::getWhiteTexture());
-		window2->getMeshes()[0].getMaterial().setDisplacementMap(TextureLoader::load2DTexture(std::string("res/textures/Pebles_Displace.png")));
+		window2->getMeshes()[0].getMaterial().setAlbedoMap(editor::TextureLoader::load2DTexture(std::string("res/textures/Pebles_001_COLOR.png"), &srgbTextureSettings));
+		window2->getMeshes()[0].getMaterial().setMetallicMap(editor::TextureLoader::load2DTexture(std::string("res/textures/Pebles_001_SPEC.png")));
+		window2->getMeshes()[0].getMaterial().setNormalMap(editor::TextureLoader::load2DTexture(std::string("res/textures/Pebles_001_NRM.png")));
+		window2->getMeshes()[0].getMaterial().setAmbientOcclusionMap(editor::TextureLoader::load2DTexture(std::string("res/textures/Pebles_001_OCC.png")));
+		window2->getMeshes()[0].getMaterial().setRoughnessMap(editor::TextureLoader::getWhiteTexture());
+		window2->getMeshes()[0].getMaterial().setDisplacementMap(editor::TextureLoader::load2DTexture(std::string("res/textures/Pebles_Displace.png")));
 
 		//Model *pbrGun = new arcane::Model("res/3D_Models/Cerberus_Gun/Cerberus_LP.FBX");
 		//m_RenderableModels.push_back(new RenderableModel(glm::vec3(120.0f, 75.0f, 120.0f), glm::vec3(0.5f, 0.5f, 0.5f), glm::vec3(1.0f, 0.0f, 0.0f), glm::radians(-90.0f), pbrGun, nullptr, true, false));

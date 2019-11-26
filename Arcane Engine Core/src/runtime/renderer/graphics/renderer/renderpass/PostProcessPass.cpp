@@ -1,19 +1,19 @@
 #include "pch.h"
 #include "PostProcessPass.h"
 
-#include <ui/RuntimePane.h>
-#include <utils/loaders/ShaderLoader.h>
+#include <editor/ui/RuntimePane.h>
+#include <editor/utils/loaders/ShaderLoader.h>
 
 namespace arcane {
 
-	PostProcessPass::PostProcessPass(Scene3D *scene) : RenderPass(scene), m_SsaoRenderTarget(Window::getResolutionWidth(), Window::getResolutionHeight(), false), m_SsaoBlurRenderTarget(Window::getResolutionWidth(), Window::getResolutionHeight(), false),
-		m_TonemappedNonLinearTarget(Window::getWidth(), Window::getHeight(), false), m_ScreenRenderTarget(Window::getWidth(), Window::getHeight(), false), m_ResolveRenderTarget(Window::getResolutionWidth(), Window::getResolutionHeight(), false), m_Timer()
+	PostProcessPass::PostProcessPass(Scene3D *scene) : RenderPass(scene), m_SsaoRenderTarget(editor::Window::getResolutionWidth(), editor::Window::getResolutionHeight(), false), m_SsaoBlurRenderTarget(editor::Window::getResolutionWidth(), editor::Window::getResolutionHeight(), false),
+		m_TonemappedNonLinearTarget(editor::Window::getWidth(), editor::Window::getHeight(), false), m_ScreenRenderTarget(editor::Window::getWidth(), editor::Window::getHeight(), false), m_ResolveRenderTarget(editor::Window::getResolutionWidth(), editor::Window::getResolutionHeight(), false), m_Timer()
 	{
 		// Shader setup
-		m_PostProcessShader = ShaderLoader::loadShader("src/shaders/postprocess.vert", "src/shaders/postprocess.frag");
-		m_FxaaShader = ShaderLoader::loadShader("src/shaders/fxaa.vert", "src/shaders/fxaa.frag");
-		m_SsaoShader = ShaderLoader::loadShader("src/shaders/ssao.vert", "src/shaders/ssao.frag");
-		m_SsaoBlurShader = ShaderLoader::loadShader("src/shaders/ssao_blur.vert", "src/shaders/ssao_blur.frag");
+		m_PostProcessShader = editor::ShaderLoader::loadShader("src/shaders/postprocess.vert", "src/shaders/postprocess.frag");
+		m_FxaaShader = editor::ShaderLoader::loadShader("src/shaders/fxaa.vert", "src/shaders/fxaa.frag");
+		m_SsaoShader = editor::ShaderLoader::loadShader("src/shaders/ssao.vert", "src/shaders/ssao.frag");
+		m_SsaoBlurShader = editor::ShaderLoader::loadShader("src/shaders/ssao_blur.vert", "src/shaders/ssao_blur.frag");
 
 		// Framebuffer setup
 		m_SsaoRenderTarget.addColorTexture(NormalizedSingleChannel8).createFramebuffer();
@@ -56,11 +56,11 @@ namespace arcane {
 		m_SsaoNoiseTexture.generate2DTexture(4, 4, GL_RGB, GL_FLOAT, &noiseSSAO[0]);
 
 		// Debug stuff
-		DebugPane::bindFxaaEnabled(&m_FxaaEnabled);
-		DebugPane::bindGammaCorrectionValue(&m_GammaCorrection);
-		DebugPane::bindSsaoEnabled(&m_SsaoEnabled);
-		DebugPane::bindSsaoSampleRadiusValue(&m_SsaoSampleRadius);
-		DebugPane::bindSsaoStrengthValue(&m_SsaoStrength);
+		editor::DebugPane::bindFxaaEnabled(&m_FxaaEnabled);
+		editor::DebugPane::bindGammaCorrectionValue(&m_GammaCorrection);
+		editor::DebugPane::bindSsaoEnabled(&m_SsaoEnabled);
+		editor::DebugPane::bindSsaoSampleRadiusValue(&m_SsaoSampleRadius);
+		editor::DebugPane::bindSsaoStrengthValue(&m_SsaoStrength);
 	}
 
 	PostProcessPass::~PostProcessPass() {}
@@ -73,7 +73,7 @@ namespace arcane {
 #endif
 		PreLightingPassOutput passOutput;
 		if (!m_SsaoEnabled) {
-			passOutput.ssaoTexture = TextureLoader::getWhiteTexture();
+			passOutput.ssaoTexture = editor::TextureLoader::getWhiteTexture();
 			return passOutput;
 		}
 
@@ -131,7 +131,7 @@ namespace arcane {
 
 #if DEBUG_ENABLED
 		glFinish();
-		RuntimePane::setSsaoTimer((float)m_Timer.elapsed());
+		editor::RuntimePane::setSsaoTimer((float)m_Timer.elapsed());
 #endif
 
 		// Render pass output
@@ -161,7 +161,7 @@ namespace arcane {
 		}
 
 #if DEBUG_ENABLED
-		if (DebugPane::getWireframeMode())
+		if (editor::DebugPane::getWireframeMode())
 			glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 #endif
 
@@ -182,8 +182,8 @@ namespace arcane {
 		glFinish();
 		m_Timer.reset();
 #endif
-		Window::bind();
-		Window::clear();
+		editor::Window::bind();
+		editor::Window::clear();
 		GLCache::getInstance()->switchShader(m_FxaaShader);
 		m_FxaaShader->setUniform("enable_FXAA", m_FxaaEnabled);
 		m_FxaaShader->setUniform("inverse_resolution", glm::vec2(1.0f / (float)target->getWidth(), 1.0f / (float)target->getHeight()));
@@ -193,7 +193,7 @@ namespace arcane {
 		modelRenderer->NDC_Plane.Draw();
 #if DEBUG_ENABLED
 		glFinish();
-		RuntimePane::setFxaaTimer((float)m_Timer.elapsed());
+		editor::RuntimePane::setFxaaTimer((float)m_Timer.elapsed());
 #endif
 	}
 

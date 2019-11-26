@@ -1,7 +1,7 @@
 #pragma once
 
-#include <graphics/Shader.h>
-#include <utils/Singleton.h>
+#include <runtime/renderer/graphics/Shader.h>
+#include <runtime/renderer/utils/Singleton.h>
 
 namespace arcane {
 

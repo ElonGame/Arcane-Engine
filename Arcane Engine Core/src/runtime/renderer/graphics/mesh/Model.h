@@ -1,9 +1,9 @@
 #pragma once
 
-#include <graphics/Shader.h>
-#include <graphics/mesh/Mesh.h>
-#include <graphics/renderer/renderpass/RenderPassType.h>
-#include <utils/loaders/TextureLoader.h>
+#include <runtime/renderer/graphics/Shader.h>
+#include <runtime/renderer/graphics/mesh/Mesh.h>
+#include <runtime/renderer/graphics/renderer/renderpass/RenderPassType.h>
+#include <editor/utils/loaders/TextureLoader.h>
 
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>

@@ -1,10 +1,10 @@
 #pragma once
 
-#include <graphics/mesh/Mesh.h>
-#include <graphics/mesh/Model.h>
-#include <graphics/renderer/GLCache.h>
-#include <graphics/Shader.h>
-#include <utils/loaders/TextureLoader.h>
+#include <runtime/renderer/graphics/mesh/Mesh.h>
+#include <runtime/renderer/graphics/mesh/Model.h>
+#include <runtime/renderer/graphics/renderer/GLCache.h>
+#include <runtime/renderer/graphics/Shader.h>
+#include <editor/utils/loaders/TextureLoader.h>
 
 namespace arcane {
 

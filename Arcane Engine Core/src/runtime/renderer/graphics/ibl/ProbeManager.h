@@ -1,9 +1,9 @@
 #pragma once
 
-#include <graphics/Shader.h>
-#include <graphics/Skybox.h>
-#include <graphics/ibl/LightProbe.h>
-#include <graphics/ibl/ReflectionProbe.h>
+#include <runtime/renderer/graphics/Shader.h>
+#include <runtime/renderer/graphics/Skybox.h>
+#include <runtime/renderer/graphics/ibl/LightProbe.h>
+#include <runtime/renderer/graphics/ibl/ReflectionProbe.h>
 
 namespace arcane {
 

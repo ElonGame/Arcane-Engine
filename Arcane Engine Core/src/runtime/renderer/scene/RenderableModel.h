@@ -1,7 +1,7 @@
 #pragma once
 
-#include <graphics/mesh/Model.h>
-#include <graphics/renderer/renderpass/RenderPassType.h>
+#include <runtime/renderer/graphics/mesh/Model.h>
+#include <runtime/renderer/graphics/renderer/renderpass/RenderPassType.h>
 
 namespace arcane {
 

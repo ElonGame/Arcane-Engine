@@ -1,22 +1,22 @@
 #include "pch.h"
 #include "DeferredLightingPass.h"
 
-#include <graphics/renderer/renderpass/deferred/DeferredGeometryPass.h>
-#include <utils/loaders/ShaderLoader.h>
+#include <runtime/renderer/graphics/renderer/renderpass/deferred/DeferredGeometryPass.h>
+#include <editor/utils/loaders/ShaderLoader.h>
 
 namespace arcane {
 
 	DeferredLightingPass::DeferredLightingPass(Scene3D *scene) : RenderPass(scene), m_AllocatedFramebuffer(true)
 	{
-		m_LightingShader = ShaderLoader::loadShader("src/shaders/deferred/pbr_lighting_pass.vert", "src/shaders/deferred/pbr_lighting_pass.frag");
+		m_LightingShader = editor::ShaderLoader::loadShader("src/shaders/deferred/pbr_lighting_pass.vert", "src/shaders/deferred/pbr_lighting_pass.frag");
 
-		m_Framebuffer = new Framebuffer(Window::getResolutionWidth(), Window::getResolutionHeight(), false);
+		m_Framebuffer = new Framebuffer(editor::Window::getResolutionWidth(), editor::Window::getResolutionHeight(), false);
 		m_Framebuffer->addColorTexture(FloatingPoint16).addDepthStencilTexture(NormalizedDepthStencil).createFramebuffer();
 	}
 
 	DeferredLightingPass::DeferredLightingPass(Scene3D *scene, Framebuffer *customFramebuffer) : RenderPass(scene), m_AllocatedFramebuffer(false), m_Framebuffer(customFramebuffer)
 	{
-		m_LightingShader = ShaderLoader::loadShader("src/shaders/deferred/pbr_lighting_pass.vert", "src/shaders/deferred/pbr_lighting_pass.frag");
+		m_LightingShader = editor::ShaderLoader::loadShader("src/shaders/deferred/pbr_lighting_pass.vert", "src/shaders/deferred/pbr_lighting_pass.frag");
 	}
 
 	DeferredLightingPass::~DeferredLightingPass() {

@@ -1,8 +1,7 @@
 #pragma once
 
-#include <graphics/camera/ICamera.h>
-#include <graphics/Window.h>
-#include <ui/DebugPane.h>
+#include <runtime/renderer/graphics/camera/ICamera.h>
+#include <editor/ui/DebugPane.h>
 
 namespace arcane {
 

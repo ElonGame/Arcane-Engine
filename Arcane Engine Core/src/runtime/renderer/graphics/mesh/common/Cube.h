@@ -1,6 +1,6 @@
 #pragma once
 
-#include <graphics/mesh/Mesh.h>
+#include <runtime/renderer/graphics/mesh/Mesh.h>
 
 namespace arcane {
 

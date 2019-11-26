@@ -1,16 +1,16 @@
 #include "pch.h"
 #include "Skybox.h"
 
-#include <utils/loaders/ShaderLoader.h>
+#include <editor/utils/loaders/ShaderLoader.h>
 
 namespace arcane {
 
 	Skybox::Skybox(const std::vector<std::string> &filePaths) {
-		m_SkyboxShader = ShaderLoader::loadShader("src/shaders/skybox.vert", "src/shaders/skybox.frag");
+		m_SkyboxShader = editor::ShaderLoader::loadShader("src/shaders/skybox.vert", "src/shaders/skybox.frag");
 
 		CubemapSettings srgbCubemap;
 		srgbCubemap.IsSRGB = true;
-		m_SkyboxCubemap = TextureLoader::loadCubemapTexture(filePaths[0], filePaths[1], filePaths[2], filePaths[3], filePaths[4], filePaths[5], &srgbCubemap);
+		m_SkyboxCubemap = editor::TextureLoader::loadCubemapTexture(filePaths[0], filePaths[1], filePaths[2], filePaths[3], filePaths[4], filePaths[5], &srgbCubemap);
 
 		m_GLCache = GLCache::getInstance();
 	}

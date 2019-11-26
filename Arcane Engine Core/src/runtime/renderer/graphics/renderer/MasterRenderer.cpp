@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "MasterRenderer.h"
 
-#include <ui/RuntimePane.h>
+#include <editor/ui/RuntimePane.h>
 
 namespace arcane
 {
@@ -47,7 +47,7 @@ namespace arcane
 		ShadowmapPassOutput shadowmapOutput = m_ShadowmapPass.generateShadowmaps(m_ActiveScene->getCamera(), false);
 #if DEBUG_ENABLED
 		glFinish();
-		RuntimePane::setShadowmapTimer((float)m_Timer.elapsed());
+		editor::RuntimePane::setShadowmapTimer((float)m_Timer.elapsed());
 #endif
 
 		GeometryPassOutput geometryOutput = m_DeferredGeometryPass.executeGeometryPass(m_ActiveScene->getCamera(), false);

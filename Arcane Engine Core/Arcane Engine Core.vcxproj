@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" 
+  xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -84,71 +85,64 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\graphics\renderer\renderpass\deferred\DeferredGeometryPass.cpp" />
-    <ClCompile Include="src\graphics\renderer\renderpass\deferred\DeferredLightingPass.cpp" />
-    <ClCompile Include="src\graphics\renderer\renderpass\deferred\PostGBufferForwardPass.cpp" />
-    <ClCompile Include="src\input\JoystickInputData.cpp" />
-    <ClCompile Include="src\graphics\camera\FPSCamera.cpp" />
-    <ClCompile Include="src\graphics\camera\CubemapCamera.cpp" />
-    <ClCompile Include="src\graphics\lights\DirectionalLight.cpp" />
-    <ClCompile Include="src\graphics\lights\Light.cpp" />
-    <ClCompile Include="src\graphics\lights\DynamicLightManager.cpp" />
-    <ClCompile Include="src\graphics\lights\PointLight.cpp" />
-    <ClCompile Include="src\graphics\lights\SpotLight.cpp" />
-    <ClCompile Include="src\graphics\ibl\ProbeManager.cpp" />
-    <ClCompile Include="src\graphics\ibl\LightProbe.cpp" />
-    <ClCompile Include="src\graphics\ibl\ReflectionProbe.cpp" />
-    <ClCompile Include="src\graphics\mesh\common\Cube.cpp" />
-    <ClCompile Include="src\graphics\mesh\common\Quad.cpp" />
-    <ClCompile Include="src\graphics\mesh\common\Sphere.cpp" />
-    <ClCompile Include="src\graphics\mesh\Material.cpp" />
-    <ClCompile Include="src\graphics\mesh\Model.cpp" />
-    <ClCompile Include="src\graphics\mesh\Mesh.cpp" />
-    <ClCompile Include="src\graphics\renderer\GLCache.cpp" />
-    <ClCompile Include="src\graphics\renderer\MasterRenderer.cpp" />
-    <ClCompile Include="src\graphics\renderer\renderpass\forward\ForwardProbePass.cpp" />
-    <ClCompile Include="src\graphics\renderer\renderpass\forward\ForwardLightingPass.cpp" />
-    <ClCompile Include="src\graphics\renderer\renderpass\PostProcessPass.cpp" />
-    <ClCompile Include="src\graphics\renderer\renderpass\RenderPass.cpp" />
-    <ClCompile Include="src\graphics\renderer\renderpass\ShadowmapPass.cpp" />
-    <ClCompile Include="src\input\InputManager.cpp" />
-    <ClCompile Include="src\input\JoystickManager.cpp" />
+    <ClCompile Include="src\editor\input\InputManager.cpp" />
+    <ClCompile Include="src\editor\input\JoystickInputData.cpp" />
+    <ClCompile Include="src\editor\input\JoystickManager.cpp" />
+    <ClCompile Include="src\editor\ui\DebugPane.cpp" />
+    <ClCompile Include="src\editor\ui\Pane.cpp" />
+    <ClCompile Include="src\editor\ui\RuntimePane.cpp" />
+    <ClCompile Include="src\editor\utils\FileUtils.cpp" />
+    <ClCompile Include="src\editor\utils\loaders\MeshLoader.cpp" />
+    <ClCompile Include="src\editor\utils\loaders\ShaderLoader.cpp" />
+    <ClCompile Include="src\editor\utils\loaders\TextureLoader.cpp" />
+    <ClCompile Include="src\editor\Window.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\platform\OpenGL\Framebuffers\GBuffer.cpp" />
-    <ClCompile Include="src\Render\ui\DebugPane.cpp" />
-    <ClCompile Include="src\Render\ui\Pane.cpp" />
-    <ClCompile Include="src\Render\ui\RuntimePane.cpp" />
-    <ClCompile Include="src\Render\utils\loaders\MeshLoader.cpp" />
-    <ClCompile Include="src\Render\utils\loaders\ShaderLoader.cpp" />
-    <ClCompile Include="src\Render\utils\loaders\TextureLoader.cpp" />
-    <ClCompile Include="src\Render\vendor\imgui\imgui.cpp" />
-    <ClCompile Include="src\Render\vendor\imgui\imgui_demo.cpp" />
-    <ClCompile Include="src\Render\vendor\imgui\imgui_draw.cpp" />
-    <ClCompile Include="src\Render\vendor\imgui\imgui_impl_glfw_gl3.cpp" />
-    <ClCompile Include="src\Render\vendor\imgui\main.cpp" />
-    <ClCompile Include="src\scene\RenderableModel.cpp" />
-    <ClCompile Include="src\graphics\renderer\ModelRenderer.cpp" />
-    <ClCompile Include="src\graphics\Shader.cpp" />
-    <ClCompile Include="src\graphics\Skybox.cpp" />
-    <ClCompile Include="src\graphics\texture\Cubemap.cpp" />
-    <ClCompile Include="src\graphics\texture\Texture.cpp" />
-    <ClCompile Include="src\graphics\Window.cpp" />
-    <ClCompile Include="src\platform\OpenGL\Buffer.cpp" />
-    <ClCompile Include="src\platform\OpenGL\Framebuffers\Framebuffer.cpp" />
-    <ClCompile Include="src\platform\OpenGL\IndexBuffer.cpp" />
-    <ClCompile Include="src\platform\OpenGL\VertexArray.cpp" />
-    <ClCompile Include="src\scene\Scene3D.cpp" />
-    <ClCompile Include="src\terrain\Terrain.cpp" />
-    <ClCompile Include="src\ui\DebugPane.cpp" />
-    <ClCompile Include="src\ui\Pane.cpp" />
-    <ClCompile Include="src\ui\RuntimePane.cpp" />
-    <ClCompile Include="src\utils\FileUtils.cpp" />
-    <ClCompile Include="src\utils\loaders\MeshLoader.cpp" />
-    <ClCompile Include="src\utils\loaders\ShaderLoader.cpp" />
-    <ClCompile Include="src\utils\loaders\TextureLoader.cpp" />
-    <ClCompile Include="src\utils\Logger.cpp" />
-    <ClCompile Include="src\utils\Time.cpp" />
-    <ClCompile Include="src\utils\Timer.cpp" />
+    <ClCompile Include="src\pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\runtime\renderer\graphics\camera\CubemapCamera.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\camera\FPSCamera.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\ibl\LightProbe.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\ibl\ProbeManager.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\ibl\ReflectionProbe.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\lights\DirectionalLight.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\lights\DynamicLightManager.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\lights\Light.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\lights\PointLight.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\lights\SpotLight.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\mesh\common\Cube.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\mesh\common\Quad.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\mesh\common\Sphere.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\mesh\Material.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\mesh\Mesh.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\mesh\Model.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\renderer\GLCache.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\renderer\MasterRenderer.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\renderer\ModelRenderer.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\renderer\renderpass\deferred\DeferredGeometryPass.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\renderer\renderpass\deferred\DeferredLightingPass.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\renderer\renderpass\deferred\PostGBufferForwardPass.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\renderer\renderpass\forward\ForwardLightingPass.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\renderer\renderpass\forward\ForwardProbePass.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\renderer\renderpass\PostProcessPass.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\renderer\renderpass\RenderPass.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\renderer\renderpass\ShadowmapPass.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\Shader.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\Skybox.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\texture\Cubemap.cpp" />
+    <ClCompile Include="src\runtime\renderer\graphics\texture\Texture.cpp" />
+    <ClCompile Include="src\runtime\renderer\platform\OpenGL\Buffer.cpp" />
+    <ClCompile Include="src\runtime\renderer\platform\OpenGL\Framebuffers\Framebuffer.cpp" />
+    <ClCompile Include="src\runtime\renderer\platform\OpenGL\Framebuffers\GBuffer.cpp" />
+    <ClCompile Include="src\runtime\renderer\platform\OpenGL\IndexBuffer.cpp" />
+    <ClCompile Include="src\runtime\renderer\platform\OpenGL\VertexArray.cpp" />
+    <ClCompile Include="src\runtime\renderer\scene\RenderableModel.cpp" />
+    <ClCompile Include="src\runtime\renderer\scene\Scene3D.cpp" />
+    <ClCompile Include="src\runtime\renderer\terrain\Terrain.cpp" />
+    <ClCompile Include="src\runtime\renderer\utils\Logger.cpp" />
+    <ClCompile Include="src\runtime\renderer\utils\Time.cpp" />
+    <ClCompile Include="src\runtime\renderer\utils\Timer.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
@@ -161,121 +155,91 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\vendor\imgui\imgui_impl_glfw_gl3.cpp">
+    <ClCompile Include="src\vendor\imgui\imgui_impl_glfw.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\vendor\imgui\imgui_impl_opengl3.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="src\vendor\imgui\imgui_widgets.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\graphics\renderer\renderpass\deferred\DeferredGeometryPass.h" />
-    <ClInclude Include="src\graphics\renderer\renderpass\deferred\DeferredLightingPass.h" />
-    <ClInclude Include="src\graphics\renderer\renderpass\deferred\PostGBufferForwardPass.h" />
-    <ClInclude Include="src\input\JoystickInputData.h" />
-    <ClInclude Include="src\graphics\camera\FPSCamera.h" />
-    <ClInclude Include="src\graphics\camera\CubemapCamera.h" />
-    <ClInclude Include="src\graphics\camera\ICamera.h" />
-    <ClInclude Include="src\graphics\lights\DirectionalLight.h" />
-    <ClInclude Include="src\graphics\lights\Light.h" />
-    <ClInclude Include="src\graphics\lights\DynamicLightManager.h" />
-    <ClInclude Include="src\graphics\lights\PointLight.h" />
-    <ClInclude Include="src\graphics\lights\SpotLight.h" />
-    <ClInclude Include="src\graphics\ibl\ProbeManager.h" />
-    <ClInclude Include="src\graphics\ibl\LightProbe.h" />
-    <ClInclude Include="src\graphics\ibl\ReflectionProbe.h" />
-    <ClInclude Include="src\graphics\mesh\common\Cube.h" />
-    <ClInclude Include="src\graphics\mesh\common\Quad.h" />
-    <ClInclude Include="src\graphics\mesh\common\Sphere.h" />
-    <ClInclude Include="src\graphics\mesh\Material.h" />
-    <ClInclude Include="src\graphics\mesh\Model.h" />
-    <ClInclude Include="src\graphics\mesh\Mesh.h" />
-    <ClInclude Include="src\graphics\renderer\GLCache.h" />
-    <ClInclude Include="src\graphics\renderer\MasterRenderer.h" />
-    <ClInclude Include="src\graphics\renderer\renderpass\forward\ForwardProbePass.h" />
-    <ClInclude Include="src\graphics\renderer\renderpass\forward\ForwardLightingPass.h" />
-    <ClInclude Include="src\graphics\renderer\renderpass\PostProcessPass.h" />
-    <ClInclude Include="src\graphics\renderer\renderpass\RenderPassType.h" />
-    <ClInclude Include="src\graphics\renderer\renderpass\ShadowmapPass.h" />
-    <ClInclude Include="src\input\InputManager.h" />
-    <ClInclude Include="src\input\JoystickManager.h" />
-    <ClInclude Include="src\platform\OpenGL\Framebuffers\GBuffer.h" />
-    <ClInclude Include="src\Render\ui\DebugPane.h" />
-    <ClInclude Include="src\Render\ui\Pane.h" />
-    <ClInclude Include="src\Render\ui\RuntimePane.h" />
-    <ClInclude Include="src\Render\utils\loaders\MeshLoader.h" />
-    <ClInclude Include="src\Render\utils\loaders\ShaderLoader.h" />
-    <ClInclude Include="src\Render\utils\loaders\TextureLoader.h" />
-    <ClInclude Include="src\Render\vendor\imgui\imconfig.h" />
-    <ClInclude Include="src\Render\vendor\imgui\imgui.h" />
-    <ClInclude Include="src\Render\vendor\imgui\imgui_impl_glfw_gl3.h" />
-    <ClInclude Include="src\Render\vendor\imgui\imgui_internal.h" />
-    <ClInclude Include="src\Render\vendor\imgui\stb_rect_pack.h" />
-    <ClInclude Include="src\Render\vendor\imgui\stb_textedit.h" />
-    <ClInclude Include="src\Render\vendor\imgui\stb_truetype.h" />
-    <ClInclude Include="src\scene\RenderableModel.h" />
-    <ClInclude Include="src\graphics\renderer\ModelRenderer.h" />
-    <ClInclude Include="src\graphics\renderer\renderpass\RenderPass.h" />
-    <ClInclude Include="src\graphics\Shader.h" />
-    <ClInclude Include="src\graphics\Skybox.h" />
-    <ClInclude Include="src\graphics\texture\Cubemap.h" />
-    <ClInclude Include="src\graphics\texture\Texture.h" />
-    <ClInclude Include="src\graphics\Window.h" />
-    <ClInclude Include="src\platform\OpenGL\Buffer.h" />
-    <ClInclude Include="src\platform\OpenGL\Framebuffers\Framebuffer.h" />
-    <ClInclude Include="src\platform\OpenGL\IndexBuffer.h" />
-    <ClInclude Include="src\platform\OpenGL\VertexArray.h" />
-    <ClInclude Include="src\scene\Scene3D.h" />
-    <ClInclude Include="src\terrain\Terrain.h" />
-    <ClInclude Include="src\ui\DebugPane.h" />
-    <ClInclude Include="src\ui\Pane.h" />
-    <ClInclude Include="src\ui\RuntimePane.h" />
-    <ClInclude Include="src\utils\FileUtils.h" />
-    <ClInclude Include="src\utils\loaders\MeshLoader.h" />
-    <ClInclude Include="src\utils\loaders\ShaderLoader.h" />
-    <ClInclude Include="src\utils\loaders\TextureLoader.h" />
-    <ClInclude Include="src\utils\Logger.h" />
-    <ClInclude Include="src\utils\Singleton.h" />
-    <ClInclude Include="src\utils\Time.h" />
-    <ClInclude Include="src\utils\Timer.h" />
+    <ClInclude Include="src\editor\input\InputManager.h" />
+    <ClInclude Include="src\editor\input\JoystickInputData.h" />
+    <ClInclude Include="src\editor\input\JoystickManager.h" />
+    <ClInclude Include="src\editor\ui\DebugPane.h" />
+    <ClInclude Include="src\editor\ui\Pane.h" />
+    <ClInclude Include="src\editor\ui\RuntimePane.h" />
+    <ClInclude Include="src\editor\utils\FileUtils.h" />
+    <ClInclude Include="src\editor\utils\loaders\MeshLoader.h" />
+    <ClInclude Include="src\editor\utils\loaders\ShaderLoader.h" />
+    <ClInclude Include="src\editor\utils\loaders\TextureLoader.h" />
+    <ClInclude Include="src\editor\Window.h" />
+    <ClInclude Include="src\pch.h" />
+    <ClInclude Include="src\runtime\renderer\Defs.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\camera\CubemapCamera.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\camera\FPSCamera.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\camera\ICamera.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\ibl\LightProbe.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\ibl\ProbeManager.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\ibl\ReflectionProbe.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\lights\DirectionalLight.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\lights\DynamicLightManager.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\lights\Light.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\lights\PointLight.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\lights\SpotLight.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\mesh\common\Cube.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\mesh\common\Quad.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\mesh\common\Sphere.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\mesh\Material.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\mesh\Mesh.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\mesh\Model.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\renderer\GLCache.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\renderer\MasterRenderer.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\renderer\ModelRenderer.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\renderer\renderpass\deferred\DeferredGeometryPass.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\renderer\renderpass\deferred\DeferredLightingPass.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\renderer\renderpass\deferred\PostGBufferForwardPass.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\renderer\renderpass\forward\ForwardLightingPass.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\renderer\renderpass\forward\ForwardProbePass.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\renderer\renderpass\PostProcessPass.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\renderer\renderpass\RenderPass.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\renderer\renderpass\RenderPassType.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\renderer\renderpass\ShadowmapPass.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\Shader.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\Skybox.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\texture\Cubemap.h" />
+    <ClInclude Include="src\runtime\renderer\graphics\texture\Texture.h" />
+    <ClInclude Include="src\runtime\renderer\platform\OpenGL\Buffer.h" />
+    <ClInclude Include="src\runtime\renderer\platform\OpenGL\Framebuffers\Framebuffer.h" />
+    <ClInclude Include="src\runtime\renderer\platform\OpenGL\Framebuffers\GBuffer.h" />
+    <ClInclude Include="src\runtime\renderer\platform\OpenGL\IndexBuffer.h" />
+    <ClInclude Include="src\runtime\renderer\platform\OpenGL\VertexArray.h" />
+    <ClInclude Include="src\runtime\renderer\scene\RenderableModel.h" />
+    <ClInclude Include="src\runtime\renderer\scene\Scene3D.h" />
+    <ClInclude Include="src\runtime\renderer\terrain\Terrain.h" />
+    <ClInclude Include="src\runtime\renderer\utils\Logger.h" />
+    <ClInclude Include="src\runtime\renderer\utils\Singleton.h" />
+    <ClInclude Include="src\runtime\renderer\utils\Time.h" />
+    <ClInclude Include="src\runtime\renderer\utils\Timer.h" />
     <ClInclude Include="src\vendor\imgui\imconfig.h" />
     <ClInclude Include="src\vendor\imgui\imgui.h" />
-    <ClInclude Include="src\vendor\imgui\imgui_impl_glfw_gl3.h" />
+    <ClInclude Include="src\vendor\imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="src\vendor\imgui\imgui_impl_opengl3.h" />
     <ClInclude Include="src\vendor\imgui\imgui_internal.h" />
+    <ClInclude Include="src\vendor\imgui\imstb_rectpack.h" />
+    <ClInclude Include="src\vendor\imgui\imstb_textedit.h" />
+    <ClInclude Include="src\vendor\imgui\imstb_truetype.h" />
     <ClInclude Include="src\vendor\imgui\stb_rect_pack.h" />
     <ClInclude Include="src\vendor\imgui\stb_textedit.h" />
     <ClInclude Include="src\vendor\imgui\stb_truetype.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\shaders\brdf_integration.frag" />
-    <None Include="src\shaders\brdf_integration.vert" />
-    <None Include="src\shaders\deferred\pbr_lighting_pass.frag" />
-    <None Include="src\shaders\deferred\pbr_lighting_pass.vert" />
-    <None Include="src\shaders\deferred\pbr_model_geometry.frag" />
-    <None Include="src\shaders\deferred\pbr_model_geometry.vert" />
-    <None Include="src\shaders\deferred\pbr_terrain_geometry.frag" />
-    <None Include="src\shaders\deferred\pbr_terrain_geometry.vert" />
-    <None Include="src\shaders\directionalLight.frag" />
-    <None Include="src\shaders\fxaa.frag" />
-    <None Include="src\shaders\fxaa.vert" />
-    <None Include="src\shaders\lightprobe_convolution.frag" />
-    <None Include="src\shaders\lightprobe_convolution.vert" />
-    <None Include="src\shaders\forward\pbr_model.frag" />
-    <None Include="src\shaders\forward\pbr_model.vert" />
-    <None Include="src\shaders\postprocess.frag" />
-    <None Include="src\shaders\postprocess.vert" />
-    <None Include="src\shaders\pointlight.frag" />
-    <None Include="src\shaders\reflectionprobe_importance_sampling.frag" />
-    <None Include="src\shaders\reflectionprobe_importance_sampling.vert" />
-    <None Include="src\shaders\shadowmap.frag" />
-    <None Include="src\shaders\shadowmap.vert" />
-    <None Include="src\shaders\skybox.frag" />
-    <None Include="src\shaders\skybox.vert" />
-    <None Include="src\shaders\spotlight.frag" />
-    <None Include="src\shaders\forward\pbr_terrain.vert" />
-    <None Include="src\shaders\forward\pbr_terrain.frag" />
-    <None Include="src\shaders\ssao.frag" />
-    <None Include="src\shaders\ssao.vert" />
-    <None Include="src\shaders\ssao_blur.frag" />
-    <None Include="src\shaders\ssao_blur.vert" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\awesomeface.png" />

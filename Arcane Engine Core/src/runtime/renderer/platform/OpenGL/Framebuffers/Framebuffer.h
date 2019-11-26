@@ -1,6 +1,6 @@
 #pragma once
 
-#include <utils/loaders/TextureLoader.h>
+#include <editor/utils/loaders/TextureLoader.h>
 
 namespace arcane {
 

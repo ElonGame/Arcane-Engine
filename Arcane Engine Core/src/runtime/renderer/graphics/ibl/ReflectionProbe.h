@@ -1,8 +1,8 @@
 #pragma once
 
-#include <graphics/Shader.h>
-#include <graphics/texture/Texture.h>
-#include <graphics/texture/Cubemap.h>
+#include <runtime/renderer/graphics/Shader.h>
+#include <runtime/renderer/graphics/texture/Texture.h>
+#include <runtime/renderer/graphics/texture/Cubemap.h>
 
 namespace arcane {
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <graphics/camera/ICamera.h>
+#include <runtime/renderer/graphics/camera/ICamera.h>
 
 namespace arcane {
 

@@ -23,7 +23,10 @@ namespace arcane {
 		Window::~Window() {
 			glfwDestroyWindow(m_Window);
 			glfwTerminate();
-			ImGui_ImplGlfwGL3_Shutdown();
+			
+			ImGui_ImplGlfw_Shutdown();
+			ImGui_ImplOpenGL3_Shutdown();
+
 			ImGui::DestroyContext();
 		}
 
@@ -103,7 +106,8 @@ namespace arcane {
 
 			// Setup ImGui bindings
 			ImGui::CreateContext();
-			ImGui_ImplGlfwGL3_Init(m_Window, false);
+			ImGui_ImplGlfw_InitForOpenGL(m_Window, false);
+			ImGui_ImplOpenGL3_Init();
 			ImGui::StyleColorsDark();
 
 			// Error callback setup

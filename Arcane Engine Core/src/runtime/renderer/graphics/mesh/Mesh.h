@@ -2,8 +2,8 @@
 
 #include "Material.h"
 
-#include <platform/OpenGL/IndexBuffer.h>
-#include <platform/OpenGL/VertexArray.h>
+#include <runtime/renderer/platform/OpenGL/IndexBuffer.h>
+#include <runtime/renderer/platform/OpenGL/VertexArray.h>
 
 namespace arcane {
 

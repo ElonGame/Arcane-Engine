@@ -36,7 +36,10 @@ int main() {
 
 		arcane::editor::Window::bind();
 		arcane::editor::Window::clear();
-		ImGui_ImplGlfwGL3_NewFrame();
+		
+		ImGui_ImplOpenGL3_NewFrame();
+		ImGui_ImplGlfw_NewFrame();
+		ImGui::NewFrame();
 
 		scene.onUpdate((float)deltaTime.getDeltaTime());
 		renderer.render();
@@ -47,7 +50,7 @@ int main() {
 		debugPane.render();
 
 		ImGui::Render();
-		ImGui_ImplGlfwGL3_RenderDrawData(ImGui::GetDrawData());
+		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
 		// Window and input updating
 		window.update();

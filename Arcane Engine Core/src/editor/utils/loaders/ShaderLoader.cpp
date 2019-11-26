@@ -2,7 +2,7 @@
 #include "ShaderLoader.h"
 
 namespace arcane {
-	namespace engine {
+	namespace editor {
 		// Static declarations
 		std::unordered_map<std::size_t, Shader*> ShaderLoader::s_ShaderCache;
 		std::hash<std::string> ShaderLoader::s_Hasher;

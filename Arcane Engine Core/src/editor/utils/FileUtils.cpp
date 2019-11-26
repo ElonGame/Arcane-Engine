@@ -2,7 +2,7 @@
 #include "FileUtils.h"
 
 namespace arcane {
-	namespace engine {
+	namespace editor {
 		std::string FileUtils::readFile(const char* filepath) {
 			std::ifstream ifs(filepath);
 			std::string result((std::istreambuf_iterator<char>(ifs)),

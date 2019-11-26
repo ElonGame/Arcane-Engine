@@ -1,21 +1,21 @@
 #pragma once
 
-#include <graphics/Skybox.h>
-#include <graphics/Window.h>
-#include <graphics/camera/FPSCamera.h>
-#include <graphics/lights/DynamicLightManager.h>
-#include <graphics/ibl/ProbeManager.h>
-#include <graphics/renderer/GLCache.h>
-#include <graphics/renderer/ModelRenderer.h>
-#include <scene/RenderableModel.h>
-#include <terrain/Terrain.h>
-#include <utils/loaders/TextureLoader.h>
+#include <runtime/renderer/graphics/Skybox.h>
+#include <editor/Window.h>
+#include <runtime/renderer/graphics/camera/FPSCamera.h>
+#include <runtime/renderer/graphics/lights/DynamicLightManager.h>
+#include <runtime/renderer/graphics/ibl/ProbeManager.h>
+#include <runtime/renderer/graphics/renderer/GLCache.h>
+#include <runtime/renderer/graphics/renderer/ModelRenderer.h>
+#include <runtime/renderer/scene/RenderableModel.h>
+#include <runtime/renderer/terrain/Terrain.h>
+#include <editor/utils/loaders/TextureLoader.h>
 
 namespace arcane {
 	
 	class Scene3D {
 	public:
-		Scene3D(Window *window);
+		Scene3D(editor::Window *window);
 		~Scene3D();
 
 		void onUpdate(float deltaTime);

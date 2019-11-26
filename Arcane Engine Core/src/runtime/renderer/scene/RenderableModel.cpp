@@ -1,5 +1,5 @@
 #include "pch.h"
-#include <scene/RenderableModel.h>
+#include "RenderableModel.h"
 
 namespace arcane {
 
@@ -27,5 +27,4 @@ namespace arcane {
 		m_Children.push_back(child);
 		child->setParent(this);
 	}
-
 }

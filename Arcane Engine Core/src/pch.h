@@ -12,6 +12,7 @@
 #include <iterator>
 #include <fstream>
 #include <random>
+#include <filesystem>
 
 #include <gl/glew.h>
 
@@ -27,9 +28,14 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include "runtime/renderer/Defs.h"
-#include "runtime/renderer/utils/Logger.h"
-
 #include <vendor/imgui/imgui.h>
 #include <vendor/imgui/imgui_impl_opengl3.h>
 #include <vendor/imgui/imgui_impl_glfw.h>
+
+#include <vendor/spdlog/include/spdlog/spdlog.h>
+#include <vendor/spdlog/include/spdlog/logger.h>
+#include <vendor/spdlog/include/spdlog/sinks/basic_file_sink.h>
+
+#include "runtime/renderer/Defs.h"
+#include "runtime/renderer/utils/Logger.h"
+

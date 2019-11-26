@@ -13,5 +13,4 @@ namespace arcane {
 		Singleton() = default;
 		virtual ~Singleton() = default;
 	};
-
 }

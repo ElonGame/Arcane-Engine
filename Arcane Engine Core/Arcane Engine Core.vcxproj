@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="15.0" 
-  xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -41,12 +40,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\SOIL\include;$(SolutionDir)Dependencies\GLM\include;$(SolutionDir)Dependencies\Assimp\include;$(SolutionDir)Dependencies\FreeType\include;$(SolutionDir)Dependencies\FreeType-GL\include;$(SolutionDir)Arcane Engine Core\src;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\SOIL\include;$(SolutionDir)Dependencies\GLM\include;$(SolutionDir)Dependencies\Assimp\include;$(SolutionDir)Dependencies\FreeType\include;$(SolutionDir)Dependencies\FreeType-GL\include;$(SolutionDir)Arcane Engine Core\src;$(projectDir)src\vendor\spdlog\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Dependencies\GLFW\lib-vc2013;$(SolutionDir)Dependencies\GLEW\lib;$(SolutionDir)Dependencies\SOIL\lib;$(SolutionDir)Dependencies\Assimp\lib;$(SolutionDir)Dependencies\FreeType\lib;$(SolutionDir)Dependencies\FreeType-GL\lib;$(LibraryPath)</LibraryPath>
     <SourcePath>$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\SOIL\include;$(SolutionDir)Dependencies\GLM\include;$(SolutionDir)Dependencies\Assimp\include;$(SolutionDir)Dependencies\FreeType\include;$(SolutionDir)Dependencies\FreeType-GL\include;$(SolutionDir)Arcane Engine Core\src;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\SOIL\include;$(SolutionDir)Dependencies\GLM\include;$(SolutionDir)Dependencies\Assimp\include;$(SolutionDir)Dependencies\FreeType\include;$(SolutionDir)Dependencies\FreeType-GL\include;$(SolutionDir)Arcane Engine Core\src;$(projectDir)src\vendor\spdlog\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Dependencies\GLFW\lib-vc2013;$(SolutionDir)Dependencies\GLEW\lib;$(SolutionDir)Dependencies\SOIL\lib;$(SolutionDir)Dependencies\Assimp\lib;$(SolutionDir)Dependencies\FreeType\lib;$(SolutionDir)Dependencies\FreeType-GL\lib;$(LibraryPath)</LibraryPath>
     <SourcePath>$(SourcePath)</SourcePath>
   </PropertyGroup>
@@ -59,6 +58,7 @@
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -76,6 +76,7 @@
       <InlineFunctionExpansion>Default</InlineFunctionExpansion>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -238,6 +239,44 @@
     <ClInclude Include="src\vendor\imgui\stb_rect_pack.h" />
     <ClInclude Include="src\vendor\imgui\stb_textedit.h" />
     <ClInclude Include="src\vendor\imgui\stb_truetype.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\async.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\async_logger.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\common.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\details\circular_q.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\details\console_globals.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\details\file_helper.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\details\fmt_helper.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\details\log_msg.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\details\mpmc_blocking_q.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\details\null_mutex.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\details\os.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\details\pattern_formatter.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\details\periodic_worker.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\details\registry.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\details\thread_pool.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\formatter.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\logger.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\sinks\android_sink.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\sinks\ansicolor_sink.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\sinks\base_sink.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\sinks\basic_file_sink.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\sinks\daily_file_sink.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\sinks\dist_sink.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\sinks\dup_filter_sink.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\sinks\msvc_sink.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\sinks\null_sink.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\sinks\ostream_sink.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\sinks\rotating_file_sink.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\sinks\sink-inl.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\sinks\sink.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\sinks\stdout_color_sinks.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\sinks\stdout_sinks.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\sinks\syslog_sink.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\sinks\systemd_sink.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\sinks\wincolor_sink.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\spdlog.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\tweakme.h" />
+    <ClInclude Include="src\vendor\spdlog\include\spdlog\version.h" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

@@ -54,10 +54,10 @@ namespace arcane {
 				glGetShaderInfoLog(vertex, length, &length, &error[0]);
 				std::string errorString(error.begin(), error.end());
 
-				Logger::getInstance().error("logged_files/shader_compile_error.txt", m_VertPath, errorString);
+				ARCANE_ERROR(m_VertPath + errorString);
 			}
 			else {
-				Logger::getInstance().error("logged_files/shader_compile_error.txt", m_VertPath, "unknown error");
+				ARCANE_ERROR(m_VertPath + std::string("unknown error"));
 			}
 			glDeleteShader(vertex);
 			return 0;
@@ -81,10 +81,10 @@ namespace arcane {
 				glGetShaderInfoLog(fragment, length, &length, &error[0]);
 				std::string errorString(error.begin(), error.end());
 
-				Logger::getInstance().error("logged_files/shader_compile_error.txt", m_FragPath, errorString);
+				ARCANE_ERROR(m_FragPath + errorString);
 			}
 			else {
-				Logger::getInstance().error("logged_files/shader_compile_error.txt", m_FragPath, "error unknown");
+				ARCANE_ERROR(m_FragPath + std::string("error unknown"));
 			}
 			glDeleteShader(fragment);
 			return 0;
@@ -110,10 +110,10 @@ namespace arcane {
 					glGetShaderInfoLog(geometry, length, &length, &error[0]);
 					std::string errorString(error.begin(), error.end());
 
-					Logger::getInstance().error("logged_files/shader_compile_error.txt", m_GeomPath, errorString);
+					ARCANE_ERROR(m_GeomPath + errorString);
 				}
 				else {
-					Logger::getInstance().error("logged_files/shader_compile_error.txt", m_GeomPath, "error unknown");
+					ARCANE_ERROR(m_GeomPath + std::string("error unknown"));
 				}
 				glDeleteShader(geometry);
 				return 0;
@@ -139,10 +139,10 @@ namespace arcane {
 					glGetShaderInfoLog(hull, length, &length, &error[0]);
 					std::string errorString(error.begin(), error.end());
 
-					Logger::getInstance().error("logged_files/shader_compile_error.txt", m_HullShader, errorString);
+					ARCANE_ERROR(m_HullShader + errorString);
 				}
 				else {
-					Logger::getInstance().error("logged_files/shader_compile_error.txt", m_HullShader, "error unknown");
+					ARCANE_ERROR(m_HullShader + std::string("error unknown"));
 				}
 				glDeleteShader(hull);
 				return 0;
@@ -168,10 +168,10 @@ namespace arcane {
 					glGetShaderInfoLog(domain, length, &length, &error[0]);
 					std::string errorString(error.begin(), error.end());
 
-					Logger::getInstance().error("logged_files/shader_compile_error.txt", m_DomainShader, errorString);
+					ARCANE_ERROR(m_DomainShader + errorString);
 				}
 				else {
-					Logger::getInstance().error("logged_files/shader_compile_error.txt", m_DomainShader, "error unknown");
+					ARCANE_ERROR(m_DomainShader + std::string("error unknown"));
 				}
 				glDeleteShader(domain);
 				return 0;

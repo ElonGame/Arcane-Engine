@@ -2,13 +2,13 @@
 
 #include "Singleton.h"
 
-#define LOG_FILE_DIR "logged_files"
+#define LOG_FILE_DIR "logged_files\\"
 
-#define ARCANE_WARN(...) arcane::LogManager::GetInstance().warn(__VA_ARGS__)
-#define ARCANE_INFO(...) arcane::LogManager::GetInstance().info(__VA_ARGS__)
-#define ARCANE_TRACE(...) arcane::LogManager::GetInstance().trace(__VA_ARGS__)
-#define ARCANE_ERROR(...) arcane::LogManager::GetInstance().error(__VA_ARGS__)
-#define ARCANE_CRITICAL(...) arcane::LogManager::GetInstance().critical(__VA_ARGS__)
+#define ARCANE_WARN(...) arcane::Logger::getInstance().warn(__VA_ARGS__)
+#define ARCANE_INFO(...) arcane::Logger::getInstance().info(__VA_ARGS__)
+#define ARCANE_TRACE(...) arcane::Logger::getInstance().trace(__VA_ARGS__)
+#define ARCANE_ERROR(...) arcane::Logger::getInstance().error(__VA_ARGS__)
+#define ARCANE_CRITICAL(...) arcane::Logger::getInstance().critical(__VA_ARGS__)
 
 namespace arcane {
 
@@ -20,15 +20,15 @@ namespace arcane {
 		static Logger& getInstance();
 
 		template<typename T>
-		inline void warn(const T& msg) { mtrxLogger->warn(msg); }
+		inline void warn(const T& msg) { log->warn(msg); }
 		template<typename T>
-		inline void info(const T& msg) { mtrxLogger->info(msg); }
+		inline void info(const T& msg) { log->info(msg); }
 		template<typename T>
-		inline void trace(const T& msg) { mtrxLogger->trace(msg); }
+		inline void trace(const T& msg) { log->trace(msg); }
 		template<typename T>
-		inline void error(const T& msg) { mtrxLogger->error(msg); }
+		inline void error(const T& msg) { log->error(msg); }
 		template<typename T>
-		inline void critical(const T& msg) { mtrxLogger->critical(msg); }
+		inline void critical(const T& msg) { log->critical(msg); }
 
 	private:
 		std::shared_ptr<spdlog::logger> log;

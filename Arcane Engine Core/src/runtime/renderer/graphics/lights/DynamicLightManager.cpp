@@ -85,7 +85,7 @@ namespace arcane {
 	void DynamicLightManager::setDirectionalLightDirection(unsigned int index, const glm::vec3 &dir) {
 #if DEBUG_ENABLED
 		if (m_DirectionalLights[index].m_IsStatic)
-			Logger::getInstance().warning("logged_files/warnings.txt", "DynamicLightManager Static Light Warning", "modifying directional light's direction, even though it is a static light");
+			ARCANE_WARN("DynamicLightManager Static Light Warning: Modifying directional light's direction, even though it is a static light");
 #endif
 		m_DirectionalLights[index].m_Direction = dir;
 	}
@@ -93,7 +93,7 @@ namespace arcane {
 	void DynamicLightManager::setPointLightPosition(unsigned int index, const glm::vec3 &pos) {
 #if DEBUG_ENABLED
 		if (m_PointLights[index].m_IsStatic)
-			Logger::getInstance().warning("logged_files/warnings.txt", "DynamicLightManager Static Light Warning", "modifying point light's position, even though it is a static light");
+			ARCANE_WARN("DynamicLightManager Static Light Warning: Modifying point light's position, even though it is a static light");
 #endif
 		m_PointLights[index].m_Position = pos;
 	}
@@ -101,14 +101,14 @@ namespace arcane {
 	void DynamicLightManager::setSpotLightPosition(unsigned int index, const glm::vec3 &pos) {
 #if DEBUG_ENABLED
 		if (m_PointLights[index].m_IsStatic)
-			Logger::getInstance().warning("logged_files/warnings.txt", "DynamicLightManager Static Light Warning", "modifying spot light's position, even though it is a static light");
+			ARCANE_WARN("DynamicLightManager Static Light Warning: Modifying spot light's position, even though it is a static light");
 #endif
 		m_SpotLights[index].m_Position = pos;
 	}
 	void DynamicLightManager::setSpotLightDirection(unsigned int index, const glm::vec3 &dir) {
 #if DEBUG_ENABLED
 		if (m_PointLights[index].m_IsStatic)
-			Logger::getInstance().warning("logged_files/warnings.txt", "DynamicLightManager Static Light Warning", "modifying spot light's direction, even though it is a static light");
+			ARCANE_WARN("DynamicLightManager Static Light Warning: Modifying spot light's direction, even though it is a static light");
 #endif
 		m_SpotLights[index].m_Direction = dir;
 	}

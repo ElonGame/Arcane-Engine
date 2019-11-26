@@ -14,7 +14,7 @@ namespace arcane {
 			s_HideCursor = true;
 
 			if (!init()) {
-				Logger::getInstance().error("logged_files/window_creation.txt", "Window Initialization", "Could not initialize window class");
+				ARCANE_ERROR("Window Initialization: Could not initialize window class");
 				glfwDestroyWindow(m_Window);
 				glfwTerminate();
 			}
@@ -36,7 +36,7 @@ namespace arcane {
 
 			if (!glfwInit()) {
 				std::cout << "GLFW Failed To Initialize" << std::endl;
-				Logger::getInstance().error("logged_files/window_creation.txt", "Window Initialization", "Could not initialize the GLFW window");
+				ARCANE_ERROR("Window Initialization: Could not initialize the GLFW window");
 				return false;
 			}
 
@@ -59,7 +59,7 @@ namespace arcane {
 			}
 
 			if (!m_Window) {
-				Logger::getInstance().error("logged_files/window_creation.txt", "Window Initialization", "Could not create the GLFW window");
+				ARCANE_ERROR("Window Initialization: Could not create the GLFW window");
 				std::cout << "GLFW Window Couldn't Be Created" << std::endl;
 				return false;
 			}
@@ -96,7 +96,7 @@ namespace arcane {
 			// Initialize GLEW (allows us to use newer versions of OpenGL)
 			if (glewInit() != GLEW_OK) {
 				std::cout << "Could not Initialize GLEW" << std::endl;
-				Logger::getInstance().error("logged_files/window_creation.txt", "Window Initialization", "Could not initialize the GLEW");
+				ARCANE_ERROR("Window Initialization: Could not initialize the GLEW");
 				return 0;
 			}
 			std::cout << "OpenGL " << glGetString(GL_VERSION) << std::endl;

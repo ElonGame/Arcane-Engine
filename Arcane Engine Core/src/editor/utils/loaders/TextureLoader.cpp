@@ -21,7 +21,7 @@ namespace arcane {
 			int width, height, numComponents;
 			unsigned char* data = stbi_load(path.c_str(), &width, &height, &numComponents, 0);
 			if (!data) {
-				Logger::getInstance().error("logged_files/texture_loading.txt", "texture load fail - path:", path);
+				ARCANE_ERROR("texture load fail - path: " + path);
 				stbi_image_free(data);
 				return nullptr;
 			}
@@ -73,7 +73,7 @@ namespace arcane {
 					stbi_image_free(data);
 				}
 				else {
-					Logger::getInstance().error("logged_files/error.txt", "Cubemap initialization", "Couldn't load cubemap using 6 filepaths. Filepath error: " + faces[i]);
+					ARCANE_ERROR("Cubemap initialization: Couldn't load cubemap using 6 filepaths. Filepath error: " + faces[i]);
 					stbi_image_free(data);
 					return cubemap;
 				}

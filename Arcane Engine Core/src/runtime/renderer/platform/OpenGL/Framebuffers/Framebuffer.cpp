@@ -25,7 +25,7 @@ namespace arcane {
 
 		// Check if the creation failed
 		if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE) {
-			Logger::getInstance().error("logged_files/error.txt", "Framebuffer initialization", "Could not initialize the framebuffer");
+			ARCANE_WARN("Framebuffer initialization: Could not initialize the framebuffer");
 			return;
 		}
 		unbind();
@@ -34,7 +34,7 @@ namespace arcane {
 	Framebuffer& Framebuffer::addColorTexture(ColorAttachmentFormat textureFormat) {
 #if DEBUG_ENABLED
 		if (m_ColourTexture.isGenerated()) {
-			Logger::getInstance().error("logged_files/error.txt", "Framebuffer initialization", "Framebuffer already has a colour attachment");
+			ARCANE_ERROR("Framebuffer initialization: Framebuffer already has a colour attachment");
 			return *this;
 		}
 #endif
@@ -68,7 +68,7 @@ namespace arcane {
 	Framebuffer& Framebuffer::addDepthStencilTexture(DepthStencilAttachmentFormat textureFormat) {
 #if DEBUG_ENABLED
 		if (m_DepthStencilTexture.isGenerated()) {
-			Logger::getInstance().error("logged_files/error.txt", "Framebuffer initialization", "Framebuffer already has a depth attachment");
+			ARCANE_ERROR("Framebuffer initialization: Framebuffer already has a depth attachment");
 			return *this;
 		}
 #endif
@@ -109,7 +109,7 @@ namespace arcane {
 	Framebuffer& Framebuffer::addDepthStencilRBO(DepthStencilAttachmentFormat textureFormat) {
 #if DEBUG_ENABLED
 		if (m_DepthStencilRBO != 0) {
-			Logger::getInstance().error("logged_files/error.txt", "Framebuffer initialization", "Framebuffer already has a depth+stencil RBO attachment");
+			ARCANE_ERROR("Framebuffer initialization: Framebuffer already has a depth+stencil RBO attachment");
 			return *this;
 		}
 #endif

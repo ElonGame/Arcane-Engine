@@ -13,7 +13,7 @@ namespace arcane {
 		int mapWidth, mapHeight;
 		unsigned char *heightMapImage = stbi_load("res/terrain/heightMap.png", &mapWidth, &mapHeight, 0, SOIL_LOAD_L);
 		if (mapWidth != mapHeight) {
-			Logger::getInstance().error("logged_files/terrain_creation.txt", "terrain initialization", "Can't use a heightmap with a different width and height");
+			ARCANE_ERROR("terrain initialization: Can't use a heightmap with a different width and height");
 			return;
 		}
 

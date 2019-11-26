@@ -27,7 +27,7 @@ namespace arcane {
 
 		void JoystickManager::joystickConnectionCallback(int joystick, int event) {
 			if (joystick >= MAX_JOYSTICKS) {
-				Logger::getInstance().error("logged_files/input_errors.txt", "Joystick Check", "Too many Joysticks connected");
+				ARCANE_ERROR("Joystick Check: Too many Joysticks connected");
 				return;
 			}
 
@@ -44,7 +44,7 @@ namespace arcane {
 
 		JoystickInputData* JoystickManager::getJoystickInfo(int joystick) {
 			if (joystick < 0 || joystick >= MAX_JOYSTICKS) {
-				Logger::getInstance().error("logged_files/input_errors.txt", "Joystick Check", "Joystick data requested does not exist");
+				ARCANE_ERROR("Joystick Check: Joystick data requested does not exist");
 				return nullptr;
 			}
 

@@ -31,7 +31,7 @@ namespace arcane {
 
 		bool InputManager::isKeyPressed(unsigned int keycode) {
 			if (keycode < 0 || keycode >= MAX_KEYS) {
-				Logger::getInstance().error("logged_files/input_errors.txt", "Input Check", "Key checked is out of bounds (ie not supported)");
+				ARCANE_CRITICAL("Input Check: Key checked is out of bounds (ie not supported)");
 				return false;
 			}
 			else {
@@ -41,7 +41,7 @@ namespace arcane {
 
 		float InputManager::getKeyPressure(unsigned int keycode) {
 			if (keycode < 0 || keycode >= MAX_KEYS) {
-				Logger::getInstance().error("logged_files/input_errors.txt", "Input Check", "Key checked is out of bounds (ie not supported)");
+				ARCANE_CRITICAL("Input Check: Key checked is out of bounds (ie not supported)");
 				return 0.0f;
 			}
 
@@ -50,7 +50,7 @@ namespace arcane {
 
 		bool InputManager::isMouseButtonPressed(unsigned int code) {
 			if (code < 0 || code >= MAX_BUTTONS) {
-				Logger::getInstance().error("logged_files/input_errors.txt", "Input Check", "Mouse button checked is out of bounds (ie not supported)");
+				ARCANE_CRITICAL("Input Check: Mouse button checked is out of bounds (ie not supported)");
 				return false;
 			}
 
@@ -84,7 +84,7 @@ namespace arcane {
 
 		bool InputManager::getButton(int keyCode) {
 			if (keyCode < 0 || keyCode >= MAX_BUTTONS) {
-				Logger::getInstance().error("logged_files/input_errors.txt", "Input Get button", "Button get is out of bounds (ie not supported)");
+				ARCANE_CRITICAL("Input Get button: Button get is out of bounds (ie not supported)");
 				return false;
 			}
 
@@ -93,7 +93,7 @@ namespace arcane {
 
 		bool InputManager::getButtonDown(int keyCode) {
 			if (keyCode < 0 || keyCode >= MAX_BUTTONS) {
-				Logger::getInstance().error("logged_files/input_errors.txt", "Input Get button", "Button get is out of bounds (ie not supported)");
+				ARCANE_CRITICAL("Input Get button: Button get is out of bounds (ie not supported)");
 				return false;
 			}
 

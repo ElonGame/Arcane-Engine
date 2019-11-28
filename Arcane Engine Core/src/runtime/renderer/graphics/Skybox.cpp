@@ -6,7 +6,7 @@
 namespace arcane {
 
 	Skybox::Skybox(const std::vector<std::string> &filePaths) {
-		m_SkyboxShader = editor::ShaderLoader::loadShader("src/shaders/skybox.vert", "src/shaders/skybox.frag");
+		m_SkyboxShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/skybox.vert", "src/runtime/renderer/shaders/skybox.frag");
 
 		CubemapSettings srgbCubemap;
 		srgbCubemap.IsSRGB = true;

@@ -10,10 +10,10 @@ namespace arcane {
 		m_TonemappedNonLinearTarget(editor::Window::getWidth(), editor::Window::getHeight(), false), m_ScreenRenderTarget(editor::Window::getWidth(), editor::Window::getHeight(), false), m_ResolveRenderTarget(editor::Window::getResolutionWidth(), editor::Window::getResolutionHeight(), false), m_Timer()
 	{
 		// Shader setup
-		m_PostProcessShader = editor::ShaderLoader::loadShader("src/shaders/postprocess.vert", "src/shaders/postprocess.frag");
-		m_FxaaShader = editor::ShaderLoader::loadShader("src/shaders/fxaa.vert", "src/shaders/fxaa.frag");
-		m_SsaoShader = editor::ShaderLoader::loadShader("src/shaders/ssao.vert", "src/shaders/ssao.frag");
-		m_SsaoBlurShader = editor::ShaderLoader::loadShader("src/shaders/ssao_blur.vert", "src/shaders/ssao_blur.frag");
+		m_PostProcessShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/postprocess.vert", "src/runtime/renderer/shaders/postprocess.frag");
+		m_FxaaShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/fxaa.vert", "src/runtime/renderer/shaders/fxaa.frag");
+		m_SsaoShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/ssao.vert", "src/runtime/renderer/shaders/ssao.frag");
+		m_SsaoBlurShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/ssao_blur.vert", "src/runtime/renderer/shaders/ssao_blur.frag");
 
 		// Framebuffer setup
 		m_SsaoRenderTarget.addColorTexture(NormalizedSingleChannel8).createFramebuffer();

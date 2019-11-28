@@ -18,7 +18,7 @@ namespace arcane {
 			std::make_shared<spdlog::sinks::wincolor_stdout_sink_mt>() // Console logger sink
 		};
 
-		log = std::make_shared<spdlog::logger>("MTRXLog", std::begin(loggerSinks), std::end(loggerSinks)); // Create the logger with multiple sinks	
+		log = std::make_shared<spdlog::logger>("Arcane Logs", std::begin(loggerSinks), std::end(loggerSinks)); // Create the logger with multiple sinks	
 		log->set_level(spdlog::level::trace); // Set logger level
 		log->set_pattern("%^[%n] [%l] [%d-%m-%Y %T]: %v %$"); // Set the logger pattern
 

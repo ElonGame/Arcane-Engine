@@ -7,8 +7,8 @@ namespace arcane {
 
 	ForwardLightingPass::ForwardLightingPass(Scene3D *scene, bool shouldMultisample) : RenderPass(scene), m_AllocatedFramebuffer(true)
 	{
-		m_ModelShader = editor::ShaderLoader::loadShader("src/shaders/forward/pbr_model.vert", "src/shaders/forward/pbr_model.frag");
-		m_TerrainShader = editor::ShaderLoader::loadShader("src/shaders/forward/pbr_terrain.vert", "src/shaders/forward/pbr_terrain.frag");
+		m_ModelShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/forward/pbr_model.vert", "src/runtime/renderer/shaders/forward/pbr_model.frag");
+		m_TerrainShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/forward/pbr_terrain.vert", "src/runtime/renderer/shaders/forward/pbr_terrain.frag");
 
 		m_Framebuffer = new Framebuffer(editor::Window::getResolutionWidth(), editor::Window::getResolutionHeight(), shouldMultisample);
 		m_Framebuffer->addColorTexture(FloatingPoint16).addDepthStencilRBO(NormalizedDepthStencil).createFramebuffer();
@@ -16,8 +16,8 @@ namespace arcane {
 
 	ForwardLightingPass::ForwardLightingPass(Scene3D *scene, Framebuffer *customFramebuffer) : RenderPass(scene), m_AllocatedFramebuffer(false), m_Framebuffer(customFramebuffer)
 	{
-		m_ModelShader = editor::ShaderLoader::loadShader("src/shaders/forward/pbr_model.vert", "src/shaders/forward/pbr_model.frag");
-		m_TerrainShader = editor::ShaderLoader::loadShader("src/shaders/forward/pbr_terrain.vert", "src/shaders/forward/pbr_terrain.frag");
+		m_ModelShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/forward/pbr_model.vert", "src/runtime/renderer/shaders/forward/pbr_model.frag");
+		m_TerrainShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/forward/pbr_terrain.vert", "src/runtime/renderer/shaders/forward/pbr_terrain.frag");
 	}
 
 	ForwardLightingPass::~ForwardLightingPass() {

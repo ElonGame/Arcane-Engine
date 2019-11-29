@@ -288,5 +288,8 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
-# Ignore log files
+# Log file
 logged_files/
+
+# .orig files
+*.orig

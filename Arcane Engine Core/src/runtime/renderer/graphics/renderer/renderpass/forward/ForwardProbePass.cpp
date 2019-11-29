@@ -11,8 +11,7 @@ namespace arcane {
 
 	ForwardProbePass::ForwardProbePass(Scene3D *scene) : RenderPass(scene),
 		m_SceneCaptureShadowFramebuffer(IBL_CAPTURE_RESOLUTION, IBL_CAPTURE_RESOLUTION, false), m_SceneCaptureLightingFramebuffer(IBL_CAPTURE_RESOLUTION, IBL_CAPTURE_RESOLUTION, false),
-		m_LightProbeConvolutionFramebuffer(LIGHT_PROBE_RESOLUTION, LIGHT_PROBE_RESOLUTION, false), m_ReflectionProbeSamplingFramebuffer(REFLECTION_PROBE_RESOLUTION, REFLECTION_PROBE_RESOLUTION, false)
-	{
+		m_LightProbeConvolutionFramebuffer(LIGHT_PROBE_RESOLUTION, LIGHT_PROBE_RESOLUTION, false), m_ReflectionProbeSamplingFramebuffer(REFLECTION_PROBE_RESOLUTION, REFLECTION_PROBE_RESOLUTION, false) {
 		m_SceneCaptureSettings.TextureFormat = GL_RGBA16F;
 		m_SceneCaptureCubemap.setCubemapSettings(m_SceneCaptureSettings);
 
@@ -43,7 +42,11 @@ namespace arcane {
 	}
 
 	void ForwardProbePass::generateBRDFLUT() {
+<<<<<<< HEAD:Arcane Engine Core/src/runtime/renderer/graphics/renderer/renderpass/forward/ForwardProbePass.cpp
 		Shader *brdfIntegrationShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/brdf_integration.vert", "src/runtime/renderer/shaders/brdf_integration.frag");
+=======
+		Shader *brdfIntegrationShader = ShaderLoader::loadShader("src/shaders/BRDF_Integration.glsl");
+>>>>>>> origin/master:Arcane Engine Core/src/graphics/renderer/renderpass/forward/ForwardProbePass.cpp
 		ModelRenderer *modelRenderer = m_ActiveScene->getModelRenderer();
 		
 		// Texture settings for the BRDF LUT

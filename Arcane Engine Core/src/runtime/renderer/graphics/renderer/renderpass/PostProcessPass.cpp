@@ -56,11 +56,20 @@ namespace arcane {
 		m_SsaoNoiseTexture.generate2DTexture(4, 4, GL_RGB, GL_FLOAT, &noiseSSAO[0]);
 
 		// Debug stuff
+<<<<<<< HEAD:Arcane Engine Core/src/runtime/renderer/graphics/renderer/renderpass/PostProcessPass.cpp
 		editor::DebugPane::bindFxaaEnabled(&m_FxaaEnabled);
 		editor::DebugPane::bindGammaCorrectionValue(&m_GammaCorrection);
 		editor::DebugPane::bindSsaoEnabled(&m_SsaoEnabled);
 		editor::DebugPane::bindSsaoSampleRadiusValue(&m_SsaoSampleRadius);
 		editor::DebugPane::bindSsaoStrengthValue(&m_SsaoStrength);
+=======
+		DebugPane::bindFxaaEnabled(&m_FxaaEnabled);
+		DebugPane::bindGammaCorrectionValue(&m_GammaCorrection);
+		DebugPane::bindExposureValue(&m_Exposure);
+		DebugPane::bindSsaoEnabled(&m_SsaoEnabled);
+		DebugPane::bindSsaoSampleRadiusValue(&m_SsaoSampleRadius);
+		DebugPane::bindSsaoStrengthValue(&m_SsaoStrength);
+>>>>>>> origin/master:Arcane Engine Core/src/graphics/renderer/renderpass/PostProcessPass.cpp
 	}
 
 	PostProcessPass::~PostProcessPass() {}
@@ -170,20 +179,26 @@ namespace arcane {
 		m_TonemappedNonLinearTarget.clear();
 		GLCache::getInstance()->switchShader(m_PostProcessShader);
 		m_PostProcessShader->setUniform("gamma_inverse", 1.0f / m_GammaCorrection);
+		m_PostProcessShader->setUniform("exposure", m_Exposure);
 		m_PostProcessShader->setUniform("read_offset", glm::vec2(1.0f / (float)target->getWidth(), 1.0f / (float)target->getHeight()));
-		m_PostProcessShader->setUniform("colour_texture", 0);
+		m_PostProcessShader->setUniform("scene_capture", 0);
 		target->getColourTexture()->bind(0);
 
 		ModelRenderer *modelRenderer = m_ActiveScene->getModelRenderer();
 		modelRenderer->NDC_Plane.Draw();
 
-		// Finally render the scene to the window's framebuffer
 #if DEBUG_ENABLED
 		glFinish();
 		m_Timer.reset();
 #endif
+<<<<<<< HEAD:Arcane Engine Core/src/runtime/renderer/graphics/renderer/renderpass/PostProcessPass.cpp
 		editor::Window::bind();
 		editor::Window::clear();
+=======
+		// Finally render the scene to the window's framebuffer
+		Window::bind();
+		Window::clear();
+>>>>>>> origin/master:Arcane Engine Core/src/graphics/renderer/renderpass/PostProcessPass.cpp
 		GLCache::getInstance()->switchShader(m_FxaaShader);
 		m_FxaaShader->setUniform("enable_FXAA", m_FxaaEnabled);
 		m_FxaaShader->setUniform("inverse_resolution", glm::vec2(1.0f / (float)target->getWidth(), 1.0f / (float)target->getHeight()));

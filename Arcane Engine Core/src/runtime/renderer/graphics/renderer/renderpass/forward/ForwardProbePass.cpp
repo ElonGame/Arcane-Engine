@@ -24,8 +24,8 @@ namespace arcane {
 			m_SceneCaptureCubemap.generateCubemapFace(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, IBL_CAPTURE_RESOLUTION, IBL_CAPTURE_RESOLUTION, GL_RGB, nullptr);
 		}
 
-		m_ConvolutionShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/lightprobe_convolution.vert", "src/shaders/lightprobe_convolution.frag");
-		m_ImportanceSamplingShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/reflectionprobe_importance_sampling.vert", "src/shaders/reflectionprobe_importance_sampling.frag");
+		m_ConvolutionShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/LightProbe_Convolution.glsl");
+		m_ImportanceSamplingShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/ReflectionProbe_ImportanceSampling.glsl");
 	}
 
 	ForwardProbePass::~ForwardProbePass() {}
@@ -42,11 +42,8 @@ namespace arcane {
 	}
 
 	void ForwardProbePass::generateBRDFLUT() {
-<<<<<<< HEAD:Arcane Engine Core/src/runtime/renderer/graphics/renderer/renderpass/forward/ForwardProbePass.cpp
-		Shader *brdfIntegrationShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/brdf_integration.vert", "src/runtime/renderer/shaders/brdf_integration.frag");
-=======
-		Shader *brdfIntegrationShader = ShaderLoader::loadShader("src/shaders/BRDF_Integration.glsl");
->>>>>>> origin/master:Arcane Engine Core/src/graphics/renderer/renderpass/forward/ForwardProbePass.cpp
+
+		Shader *brdfIntegrationShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/BRDF_Integration.glsl");
 		ModelRenderer *modelRenderer = m_ActiveScene->getModelRenderer();
 		
 		// Texture settings for the BRDF LUT

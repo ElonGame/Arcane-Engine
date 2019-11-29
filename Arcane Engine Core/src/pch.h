@@ -38,5 +38,5 @@
 #include <vendor/spdlog/include/spdlog/sinks/basic_file_sink.h>
 
 #include "runtime/renderer/Defs.h"
-#include "runtime/renderer/utils/Logger.h"
+#include "editor/utils/Logger.h"
 

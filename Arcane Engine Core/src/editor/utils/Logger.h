@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Singleton.h"
+#include "runtime/renderer/utils/Singleton.h"
 
 #define LOG_FILE_DIR "logged_files\\"
 

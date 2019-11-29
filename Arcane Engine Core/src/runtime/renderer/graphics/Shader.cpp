@@ -4,7 +4,7 @@
 namespace arcane {
 
 	Shader::Shader(const std::string &path) : m_ShaderFilePath(path) {
-		std::string shaderBinary = FileUtils::readFile(m_ShaderFilePath);
+		std::string shaderBinary = editor::FileUtils::readFile(m_ShaderFilePath);
 		auto shaderSources = preProcessShaderBinary(shaderBinary);
 		compile(shaderSources);
 	}
@@ -13,178 +13,6 @@ namespace arcane {
 		glDeleteProgram(m_ShaderID);
 	}
 
-	unsigned int Shader::load() {
-		// Create the program
-		unsigned int program = glCreateProgram();
-		int result;
-
-		// Vertex Shader
-		unsigned int vertex = glCreateShader(GL_VERTEX_SHADER);
-		std::string vertSourceString = editor::FileUtils::readFile(m_VertPath);
-		const char *vertSource = vertSourceString.c_str();
-
-		glShaderSource(vertex, 1, &vertSource, NULL);
-		glCompileShader(vertex);
-
-		// Check to see if it was successful
-		glGetShaderiv(vertex, GL_COMPILE_STATUS, &result);
-		if (result == GL_FALSE || vertSourceString.empty()) {
-			int length;
-			glGetShaderiv(vertex, GL_INFO_LOG_LENGTH, &length);
-			if (length > 0) {
-				std::vector<char> error(length);
-				glGetShaderInfoLog(vertex, length, &length, &error[0]);
-				std::string errorString(error.begin(), error.end());
-
-				ARCANE_ERROR(m_VertPath + errorString);
-			}
-			else {
-				ARCANE_ERROR(m_VertPath + std::string("unknown error"));
-			}
-			glDeleteShader(vertex);
-			return 0;
-		}
-
-		//Fragment Shader
-		unsigned int fragment = glCreateShader(GL_FRAGMENT_SHADER);
-		std::string fragSourceString = editor::FileUtils::readFile(m_FragPath);
-		const char *fragSource = fragSourceString.c_str();
-
-		glShaderSource(fragment, 1, &fragSource, NULL);
-		glCompileShader(fragment);
-
-		// Check to see if it was successful
-		glGetShaderiv(fragment, GL_COMPILE_STATUS, &result);
-		if (result == GL_FALSE || fragSourceString.empty()) {
-			int length;
-			glGetShaderiv(fragment, GL_INFO_LOG_LENGTH, &length);
-			if (length > 0) {
-				std::vector<char> error(length);
-				glGetShaderInfoLog(fragment, length, &length, &error[0]);
-				std::string errorString(error.begin(), error.end());
-
-				ARCANE_ERROR(m_FragPath + errorString);
-			}
-			else {
-				ARCANE_ERROR(m_FragPath + std::string("error unknown"));
-			}
-			glDeleteShader(fragment);
-			return 0;
-		}
-
-		// Geometry shader (optional)
-		unsigned int geometry;
-		if (m_GeomPath != "") {
-			geometry = glCreateShader(GL_GEOMETRY_SHADER);
-			std::string geomSourceString = editor::FileUtils::readFile(m_GeomPath);
-			const char *geomSource = geomSourceString.c_str();
-
-			glShaderSource(geometry, 1, &geomSource, NULL);
-			glCompileShader(geometry);
-
-			// Check to see if it was successful
-			glGetShaderiv(geometry, GL_COMPILE_STATUS, &result);
-			if (result == GL_FALSE || geomSourceString.empty()) {
-				int length;
-				glGetShaderiv(geometry, GL_INFO_LOG_LENGTH, &length);
-				if (length > 0) {
-					std::vector<char> error(length);
-					glGetShaderInfoLog(geometry, length, &length, &error[0]);
-					std::string errorString(error.begin(), error.end());
-
-					ARCANE_ERROR(m_GeomPath + errorString);
-				}
-				else {
-					ARCANE_ERROR(m_GeomPath + std::string("error unknown"));
-				}
-				glDeleteShader(geometry);
-				return 0;
-			}
-		}
-
-		// Hull Shader (optional)
-		unsigned int hull;
-		if (m_HullShader != "") {
-			hull = glCreateShader(GL_TESS_CONTROL_SHADER);
-			std::string hullSourceString = editor::FileUtils::readFile(m_HullShader);
-			const char *hullSource = hullSourceString.c_str();
-
-			glShaderSource(hull, 1, &hullSource, NULL);
-			glCompileShader(hull);
-
-			glGetShaderiv(hull, GL_COMPILE_STATUS, &result);
-			if (result == GL_FALSE || hullSourceString.empty()) {
-				int length;
-				glGetShaderiv(hull, GL_INFO_LOG_LENGTH, &length);
-				if (length > 0) {
-					std::vector<char> error(length);
-					glGetShaderInfoLog(hull, length, &length, &error[0]);
-					std::string errorString(error.begin(), error.end());
-
-					ARCANE_ERROR(m_HullShader + errorString);
-				}
-				else {
-					ARCANE_ERROR(m_HullShader + std::string("error unknown"));
-				}
-				glDeleteShader(hull);
-				return 0;
-			}
-		}
-
-		// Domain Shader (optional)
-		unsigned int domain;
-		if (m_DomainShader != "") {
-			domain = glCreateShader(GL_TESS_EVALUATION_SHADER);
-			std::string domainSourceString = editor::FileUtils::readFile(m_DomainShader);
-			const char *domainSource = domainSourceString.c_str();
-
-			glShaderSource(domain, 1, &domainSource, NULL);
-			glCompileShader(domain);
-
-			glGetShaderiv(domain, GL_COMPILE_STATUS, &result);
-			if (result == GL_FALSE || domainSourceString.empty()) {
-				int length;
-				glGetShaderiv(domain, GL_INFO_LOG_LENGTH, &length);
-				if (length > 0) {
-					std::vector<char> error(length);
-					glGetShaderInfoLog(domain, length, &length, &error[0]);
-					std::string errorString(error.begin(), error.end());
-
-					ARCANE_ERROR(m_DomainShader + errorString);
-				}
-				else {
-					ARCANE_ERROR(m_DomainShader + std::string("error unknown"));
-				}
-				glDeleteShader(domain);
-				return 0;
-			}
-		}
-
-		// Attach the shaders to the program and link them
-		glAttachShader(program, vertex);
-		glAttachShader(program, fragment);
-		if (m_GeomPath != "")
-			glAttachShader(program, geometry);
-		if (m_HullShader != "")
-			glAttachShader(program, hull);
-		if (m_DomainShader != "")
-			glAttachShader(program, domain);
-
-		glLinkProgram(program);
-		glValidateProgram(program);
-
-		// Delete the vertex and fragment shaders
-		glDeleteShader(vertex);
-		glDeleteShader(fragment);
-		if (m_GeomPath != "")
-			glDeleteShader(geometry);
-		if (m_HullShader != "")
-			glDeleteShader(hull);
-		if (m_DomainShader != "")
-			glDeleteShader(domain);
-
-		// Return the program id
-		return program;
 	void Shader::enable() const {
 		glUseProgram(m_ShaderID);
 	}
@@ -339,10 +167,10 @@ namespace arcane {
 					glGetShaderInfoLog(shader, length, &length, &error[0]);
 					std::string errorString(error.begin(), error.end());
 
-					Logger::getInstance().error("logged_files/shader_compile_error.txt", m_ShaderFilePath, errorString);
+					ARCANE_ERROR(m_ShaderFilePath + errorString);
 				}
 				else {
-					Logger::getInstance().error("logged_files/shader_compile_error.txt", m_ShaderFilePath, "unknown error");
+					ARCANE_ERROR(m_ShaderFilePath + "unknown error");
 				}
 				glDeleteShader(shader);
 				break;
@@ -356,5 +184,4 @@ namespace arcane {
 		glLinkProgram(m_ShaderID);
 		glValidateProgram(m_ShaderID);
 	}
-
 }

@@ -97,6 +97,7 @@
     <ClCompile Include="src\editor\utils\loaders\MeshLoader.cpp" />
     <ClCompile Include="src\editor\utils\loaders\ShaderLoader.cpp" />
     <ClCompile Include="src\editor\utils\loaders\TextureLoader.cpp" />
+    <ClCompile Include="src\editor\utils\Logger.cpp" />
     <ClCompile Include="src\editor\Window.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pch.cpp">
@@ -142,7 +143,6 @@
     <ClCompile Include="src\runtime\renderer\scene\RenderableModel.cpp" />
     <ClCompile Include="src\runtime\renderer\scene\Scene3D.cpp" />
     <ClCompile Include="src\runtime\renderer\terrain\Terrain.cpp" />
-    <ClCompile Include="src\runtime\renderer\utils\Logger.cpp" />
     <ClCompile Include="src\runtime\renderer\utils\Time.cpp" />
     <ClCompile Include="src\runtime\renderer\utils\Timer.cpp" />
     <ClCompile Include="src\vendor\imgui\imgui.cpp">
@@ -181,6 +181,7 @@
     <ClInclude Include="src\editor\utils\loaders\MeshLoader.h" />
     <ClInclude Include="src\editor\utils\loaders\ShaderLoader.h" />
     <ClInclude Include="src\editor\utils\loaders\TextureLoader.h" />
+    <ClInclude Include="src\editor\utils\Logger.h" />
     <ClInclude Include="src\editor\Window.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\runtime\renderer\Defs.h" />
@@ -225,7 +226,6 @@
     <ClInclude Include="src\runtime\renderer\scene\RenderableModel.h" />
     <ClInclude Include="src\runtime\renderer\scene\Scene3D.h" />
     <ClInclude Include="src\runtime\renderer\terrain\Terrain.h" />
-    <ClInclude Include="src\runtime\renderer\utils\Logger.h" />
     <ClInclude Include="src\runtime\renderer\utils\Singleton.h" />
     <ClInclude Include="src\runtime\renderer\utils\Time.h" />
     <ClInclude Include="src\runtime\renderer\utils\Timer.h" />

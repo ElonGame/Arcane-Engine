@@ -10,10 +10,10 @@ namespace arcane {
 		m_TonemappedNonLinearTarget(editor::Window::getWidth(), editor::Window::getHeight(), false), m_ScreenRenderTarget(editor::Window::getWidth(), editor::Window::getHeight(), false), m_ResolveRenderTarget(editor::Window::getResolutionWidth(), editor::Window::getResolutionHeight(), false), m_Timer()
 	{
 		// Shader setup
-		m_PostProcessShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/postprocess.vert", "src/runtime/renderer/shaders/postprocess.frag");
-		m_FxaaShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/fxaa.vert", "src/runtime/renderer/shaders/fxaa.frag");
-		m_SsaoShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/ssao.vert", "src/runtime/renderer/shaders/ssao.frag");
-		m_SsaoBlurShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/ssao_blur.vert", "src/runtime/renderer/shaders/ssao_blur.frag");
+		m_PostProcessShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/PostProcess.glsl");
+		m_FxaaShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/FXAA.glsl");
+		m_SsaoShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/SSAO.glsl");
+		m_SsaoBlurShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/SSAO_Blur.glsl");
 
 		// Framebuffer setup
 		m_SsaoRenderTarget.addColorTexture(NormalizedSingleChannel8).createFramebuffer();
@@ -56,20 +56,11 @@ namespace arcane {
 		m_SsaoNoiseTexture.generate2DTexture(4, 4, GL_RGB, GL_FLOAT, &noiseSSAO[0]);
 
 		// Debug stuff
-<<<<<<< HEAD:Arcane Engine Core/src/runtime/renderer/graphics/renderer/renderpass/PostProcessPass.cpp
 		editor::DebugPane::bindFxaaEnabled(&m_FxaaEnabled);
 		editor::DebugPane::bindGammaCorrectionValue(&m_GammaCorrection);
 		editor::DebugPane::bindSsaoEnabled(&m_SsaoEnabled);
 		editor::DebugPane::bindSsaoSampleRadiusValue(&m_SsaoSampleRadius);
 		editor::DebugPane::bindSsaoStrengthValue(&m_SsaoStrength);
-=======
-		DebugPane::bindFxaaEnabled(&m_FxaaEnabled);
-		DebugPane::bindGammaCorrectionValue(&m_GammaCorrection);
-		DebugPane::bindExposureValue(&m_Exposure);
-		DebugPane::bindSsaoEnabled(&m_SsaoEnabled);
-		DebugPane::bindSsaoSampleRadiusValue(&m_SsaoSampleRadius);
-		DebugPane::bindSsaoStrengthValue(&m_SsaoStrength);
->>>>>>> origin/master:Arcane Engine Core/src/graphics/renderer/renderpass/PostProcessPass.cpp
 	}
 
 	PostProcessPass::~PostProcessPass() {}
@@ -191,14 +182,9 @@ namespace arcane {
 		glFinish();
 		m_Timer.reset();
 #endif
-<<<<<<< HEAD:Arcane Engine Core/src/runtime/renderer/graphics/renderer/renderpass/PostProcessPass.cpp
 		editor::Window::bind();
 		editor::Window::clear();
-=======
-		// Finally render the scene to the window's framebuffer
-		Window::bind();
-		Window::clear();
->>>>>>> origin/master:Arcane Engine Core/src/graphics/renderer/renderpass/PostProcessPass.cpp
+
 		GLCache::getInstance()->switchShader(m_FxaaShader);
 		m_FxaaShader->setUniform("enable_FXAA", m_FxaaEnabled);
 		m_FxaaShader->setUniform("inverse_resolution", glm::vec2(1.0f / (float)target->getWidth(), 1.0f / (float)target->getHeight()));

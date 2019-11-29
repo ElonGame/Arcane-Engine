@@ -6,7 +6,8 @@
 
 namespace arcane {
 
-	class ReflectionProbe {
+	class ReflectionProbe
+	{
 	public:
 		ReflectionProbe(glm::vec3 &probePosition, glm::vec2 &probeResolution);
 		~ReflectionProbe();

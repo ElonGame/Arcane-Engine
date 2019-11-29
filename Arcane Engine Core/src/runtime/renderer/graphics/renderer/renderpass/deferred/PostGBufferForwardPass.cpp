@@ -6,7 +6,7 @@
 namespace arcane {
 
 	PostGBufferForward::PostGBufferForward(Scene3D *scene) : RenderPass(scene) {
-		m_ModelShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/forward/pbr_model.vert", "src/runtime/renderer/shaders/forward/pbr_model.frag");
+		m_ModelShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/forward/PBR_Model.glsl");
 	}
 
 	PostGBufferForward::~PostGBufferForward() {}

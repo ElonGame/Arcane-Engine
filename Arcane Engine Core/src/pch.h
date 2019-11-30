@@ -29,13 +29,13 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include <vendor/imgui/imgui.h>
-#include <vendor/imgui/imgui_impl_opengl3.h>
-#include <vendor/imgui/imgui_impl_glfw.h>
+#include <imgui.h>
+#include <vendor/imgui/include/imgui_impl_opengl3.h>
+#include <vendor/imgui/include/imgui_impl_glfw.h>
 
-#include <vendor/spdlog/include/spdlog/spdlog.h>
-#include <vendor/spdlog/include/spdlog/logger.h>
-#include <vendor/spdlog/include/spdlog/sinks/basic_file_sink.h>
+#include <spdlog/spdlog.h>
+#include <spdlog/logger.h>
+#include <spdlog/sinks/basic_file_sink.h>
 
 #include "runtime/renderer/Defs.h"
 #include "editor/utils/Logger.h"

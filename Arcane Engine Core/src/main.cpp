@@ -9,6 +9,13 @@
 #include <editor/utils/loaders/TextureLoader.h>
 
 int main() {
+
+	// This should be at an entry point of the application
+#if _DEBUG
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	_CrtSetReportMode(_CRT_ERROR, _CRTDBG_MODE_DEBUG);
+#endif
+
 	// Prepare the engine
 	arcane::editor::Window window("Arcane Engine", WINDOW_X_RESOLUTION, WINDOW_Y_RESOLUTION);
 	arcane::editor::TextureLoader::initializeDefaultTextures();

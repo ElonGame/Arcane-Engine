@@ -2,28 +2,28 @@
 
 #include "Pane.h"
 
-namespace arcane {
-	namespace editor {
-		class RuntimePane : public Pane {
-		public:
-			RuntimePane(glm::vec2& panePosition);
+namespace arcane::editor {
 
-			virtual void setupPaneObjects();
+	class RuntimePane : public Pane {
+	public:
+		RuntimePane(glm::vec2& panePosition);
 
-			static inline float getShadowmapTimer() { return s_ShadowmapTimer; }
-			static inline float getSsaoTimer() { return s_SsaoTimer; }
-			static inline float getFxaaTimer() { return s_FxaaTimer; }
-			static inline void setShadowmapTimer(float frameTime) { s_ShadowmapTimer = frameTime; }
-			static inline void setSsaoTimer(float frameTime) { s_SsaoTimer = frameTime; }
-			static inline void setFxaaTimer(float frameTime) { s_FxaaTimer = frameTime; }
-		private:
-			static float s_ShadowmapTimer;
-			static float s_SsaoTimer;
-			static float s_FxaaTimer;
+		virtual void setupPaneObjects();
 
-			int m_ValueOffset;
-			float m_MaxFrametime;
-			std::array<float, 300> m_Frametimes;
-		};
-	}
+		static inline float getShadowmapTimer() { return s_ShadowmapTimer; }
+		static inline float getSsaoTimer() { return s_SsaoTimer; }
+		static inline float getFxaaTimer() { return s_FxaaTimer; }
+		static inline void setShadowmapTimer(float frameTime) { s_ShadowmapTimer = frameTime; }
+		static inline void setSsaoTimer(float frameTime) { s_SsaoTimer = frameTime; }
+		static inline void setFxaaTimer(float frameTime) { s_FxaaTimer = frameTime; }
+	private:
+		static float s_ShadowmapTimer;
+		static float s_SsaoTimer;
+		static float s_FxaaTimer;
+
+		int m_ValueOffset;
+		float m_MaxFrametime;
+		std::array<float, 300> m_Frametimes;
+	};
+
 }

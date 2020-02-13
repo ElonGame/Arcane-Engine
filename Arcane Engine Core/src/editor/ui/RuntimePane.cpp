@@ -1,19 +1,19 @@
 #include "pch.h"
 #include "RuntimePane.h"
 
-namespace arcane {
-	namespace editor {
-		float editor::RuntimePane::s_ShadowmapTimer = 0.0f;
-		float editor::RuntimePane::s_SsaoTimer = 0.0f;
-		float editor::RuntimePane::s_FxaaTimer = 0.0f;
+namespace arcane::editor {
 
-		editor::RuntimePane::RuntimePane(glm::vec2& panePosition) : Pane(std::string("Runtime Analytics"), panePosition), m_ValueOffset(0), m_MaxFrametime(0), m_Frametimes()
-		{
-		}
+	float editor::RuntimePane::s_ShadowmapTimer = 0.0f;
+	float editor::RuntimePane::s_SsaoTimer = 0.0f;
+	float editor::RuntimePane::s_FxaaTimer = 0.0f;
 
-		void editor::RuntimePane::setupPaneObjects() {
-			float frametime = 1000.0f / ImGui::GetIO().Framerate;
-			ImGui::Text("Frametime: %.3f ms (FPS %.1f)", frametime, ImGui::GetIO().Framerate);
+	editor::RuntimePane::RuntimePane(glm::vec2& panePosition) : Pane(std::string("Runtime Analytics"), panePosition), m_ValueOffset(0), m_MaxFrametime(0), m_Frametimes()
+	{
+	}
+
+	void editor::RuntimePane::setupPaneObjects() {
+		float frametime = 1000.0f / ImGui::GetIO().Framerate;
+		ImGui::Text("Frametime: %.3f ms (FPS %.1f)", frametime, ImGui::GetIO().Framerate);
 #if DEBUG_ENABLED
 			if (frametime > m_MaxFrametime) {
 				m_MaxFrametime = frametime;
@@ -27,6 +27,6 @@ namespace arcane {
 			ImGui::Text("SSAO Generation: %.6f ms", 1000.0f * s_SsaoTimer);
 			ImGui::Text("FXAA: %.6f ms", 1000.0f * s_FxaaTimer);
 #endif
-		}
 	}
+	
 }

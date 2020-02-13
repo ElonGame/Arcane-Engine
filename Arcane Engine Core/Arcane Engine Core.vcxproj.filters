@@ -8,7 +8,6 @@
     <ClCompile Include="src\editor\ui\Pane.cpp" />
     <ClCompile Include="src\editor\ui\RuntimePane.cpp" />
     <ClCompile Include="src\editor\utils\FileUtils.cpp" />
-    <ClCompile Include="src\editor\utils\loaders\MeshLoader.cpp" />
     <ClCompile Include="src\editor\utils\loaders\ShaderLoader.cpp" />
     <ClCompile Include="src\editor\utils\loaders\TextureLoader.cpp" />
     <ClCompile Include="src\editor\utils\Logger.cpp" />
@@ -67,7 +66,6 @@
     <ClInclude Include="src\editor\ui\Pane.h" />
     <ClInclude Include="src\editor\ui\RuntimePane.h" />
     <ClInclude Include="src\editor\utils\FileUtils.h" />
-    <ClInclude Include="src\editor\utils\loaders\MeshLoader.h" />
     <ClInclude Include="src\editor\utils\loaders\ShaderLoader.h" />
     <ClInclude Include="src\editor\utils\loaders\TextureLoader.h" />
     <ClInclude Include="src\editor\utils\Logger.h" />

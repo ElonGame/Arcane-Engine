@@ -1,10 +1,10 @@
 #pragma once
 
-namespace arcane { 
-	namespace editor {
-		class FileUtils {
-		public:
-			static std::string readFile(const std::string& filepath);
-		};
-	}
+namespace arcane::editor { 
+
+	class FileUtils {
+	public:
+		static std::string readFile(const std::string& filepath);
+	};
+
 } 

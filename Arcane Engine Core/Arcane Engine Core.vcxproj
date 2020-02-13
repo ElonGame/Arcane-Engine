@@ -291,6 +291,8 @@
     <None Include="src\runtime\renderer\shaders\LightProbe_Convolution.glsl" />
     <None Include="src\runtime\renderer\shaders\post_process\smaa\SMAA.glsl" />
     <None Include="src\runtime\renderer\shaders\post_process\vignette\Vignette.glsl" />
+    <None Include="src\runtime\renderer\shaders\SSAO.glsl" />
+    <None Include="src\runtime\renderer\shaders\SSAO_Blur.glsl" />
     <None Include="src\runtime\renderer\shaders\TonemapGammaCorrect.glsl" />
     <None Include="src\runtime\renderer\shaders\ReflectionProbe_ImportanceSampling.glsl" />
     <None Include="src\runtime\renderer\shaders\Shadowmap_Generation.glsl" />

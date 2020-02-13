@@ -6,10 +6,10 @@
 
 namespace arcane {
 
-	PostProcessPass::PostProcessPass(Scene3D *scene) : RenderPass(scene), m_SsaoRenderTarget((unsigned int)(editor::Window::getRenderResolutionWidth() * 0.5f), (unsigned int)(editor::Window::getRenderResolutionHeight() * 0.5f), false), m_SsaoBlurRenderTarget((unsigned int)(editor::Window::getRenderResolutionWidth() * 0.5f), (unsigned int)(editor::Window::getRenderResolutionHeight() * 0.5f), false),
-		m_TonemappedNonLinearTarget(editor::Window::getWidth(), editor::Window::getHeight(), false), m_ScreenRenderTarget(editor::Window::getWidth(), editor::Window::getHeight(), false), m_ResolveRenderTarget(editor::Window::getRenderResolutionWidth(), editor::Window::getRenderResolutionHeight(), false), m_BrightPassRenderTarget(editor::Window::getWidth(), editor::Window::getHeight(), false),
-		m_BloomFullRenderTarget(editor::Window::getWidth(), editor::Window::getHeight(), false), m_BloomHalfRenderTarget((unsigned int)(editor::Window::getWidth() * 0.5f), (unsigned int)(editor::Window::getHeight() * 0.5f), false), m_BloomQuarterRenderTarget((unsigned int)(editor::Window::getWidth() * 0.25f), (unsigned int)(editor::Window::getHeight() * 0.25f), false), m_BloomEightRenderTarget((unsigned int)(editor::Window::getWidth() * 0.125f), (unsigned int)(editor::Window::getHeight() * 0.125f), false),
-		m_FullRenderTarget(editor::Window::getWidth(), editor::Window::getHeight(), false), m_HalfRenderTarget((unsigned int)(editor::Window::getWidth() * 0.5f), (unsigned int)(editor::Window::getHeight() * 0.5f), false), m_QuarterRenderTarget((unsigned int)(editor::Window::getWidth() * 0.25f), (unsigned int)(editor::Window::getWidth() * 0.25f), false), m_EightRenderTarget((unsigned int)(editor::Window::getWidth() * 0.125f), (unsigned int)(editor::Window::getHeight() * 0.125f), false),
+	PostProcessPass::PostProcessPass(Scene3D *scene) : RenderPass(scene), m_SsaoRenderTarget((unsigned int)(editor::Window::getRenderWidth() * 0.5f), (unsigned int)(editor::Window::getRenderHeight() * 0.5f), false), m_SsaoBlurRenderTarget((unsigned int)(editor::Window::getRenderWidth() * 0.5f), (unsigned int)(editor::Window::getRenderHeight() * 0.5f), false),
+		m_TonemappedNonLinearTarget(editor::Window::getWindowWidth(), editor::Window::getWindowHeight(), false), m_ScreenRenderTarget(editor::Window::getWindowWidth(), editor::Window::getWindowHeight(), false), m_ResolveRenderTarget(editor::Window::getRenderWidth(), editor::Window::getRenderHeight(), false), m_BrightPassRenderTarget(editor::Window::getWindowWidth(), editor::Window::getWindowHeight(), false),
+		m_BloomFullRenderTarget(editor::Window::getWindowWidth(), editor::Window::getWindowHeight(), false), m_BloomHalfRenderTarget((unsigned int)(editor::Window::getWindowWidth() * 0.5f), (unsigned int)(editor::Window::getWindowHeight() * 0.5f), false), m_BloomQuarterRenderTarget((unsigned int)(editor::Window::getWindowWidth() * 0.25f), (unsigned int)(editor::Window::getWindowHeight() * 0.25f), false), m_BloomEightRenderTarget((unsigned int)(editor::Window::getWindowWidth() * 0.125f), (unsigned int)(editor::Window::getWindowHeight() * 0.125f), false),
+		m_FullRenderTarget(editor::Window::getWindowWidth(), editor::Window::getWindowHeight(), false), m_HalfRenderTarget((unsigned int)(editor::Window::getWindowWidth() * 0.5f), (unsigned int)(editor::Window::getWindowHeight() * 0.5f), false), m_QuarterRenderTarget((unsigned int)(editor::Window::getWindowWidth() * 0.25f), (unsigned int)(editor::Window::getWindowWidth() * 0.25f), false), m_EightRenderTarget((unsigned int)(editor::Window::getWindowWidth() * 0.125f), (unsigned int)(editor::Window::getWindowHeight() * 0.125f), false),
 		m_SsaoNoiseTexture(), m_ProfilingTimer(), m_EffectsTimer()
 	{
 		// Shader setup
@@ -107,7 +107,7 @@ namespace arcane {
 		}
 
 		// Generate the AO factors for the scene
-		glViewport(0, 0, m_SsaoRenderTarget.getWidth(), m_SsaoRenderTarget.getHeight());
+		glViewport(0, 0, m_SsaoRenderTarget.getWindowWidth(), m_SsaoRenderTarget.getWindowHeight());
 		m_SsaoRenderTarget.bind();
 		m_GLCache->setDepthTest(false);
 		m_GLCache->setFaceCull(true);
@@ -120,7 +120,7 @@ namespace arcane {
 		m_GLCache->switchShader(m_SsaoShader);
 
 		// Used to tile the noise texture across the screen every 4 texels (because our noise texture is 4x4)
-		m_SsaoShader->setUniform("noiseScale", glm::vec2(m_SsaoRenderTarget.getWidth() * 0.25f, m_SsaoRenderTarget.getHeight() * 0.25f));
+		m_SsaoShader->setUniform("noiseScale", glm::vec2(m_SsaoRenderTarget.getWindowWidth() * 0.25f, m_SsaoRenderTarget.getWindowHeight() * 0.25f));
 
 		m_SsaoShader->setUniform("ssaoStrength", m_SsaoStrength);
 		m_SsaoShader->setUniform("sampleRadius", m_SsaoSampleRadius);
@@ -177,16 +177,16 @@ namespace arcane {
 		if (framebufferToProcess->isMultisampled()) {
 			glBindFramebuffer(GL_READ_FRAMEBUFFER, framebufferToProcess->getFramebuffer());
 			glBindFramebuffer(GL_DRAW_FRAMEBUFFER, m_ResolveRenderTarget.getFramebuffer());
-			glBlitFramebuffer(0, 0, framebufferToProcess->getWidth(), framebufferToProcess->getHeight(), 0, 0, m_ResolveRenderTarget.getWidth(), m_ResolveRenderTarget.getHeight(), GL_COLOR_BUFFER_BIT, GL_NEAREST);
+			glBlitFramebuffer(0, 0, framebufferToProcess->getWindowWidth(), framebufferToProcess->getWindowHeight(), 0, 0, m_ResolveRenderTarget.getWindowWidth(), m_ResolveRenderTarget.getWindowHeight(), GL_COLOR_BUFFER_BIT, GL_NEAREST);
 			supersampledTarget = &m_ResolveRenderTarget;
 		}
 
 		// If some sort of super-sampling is set, we need to downsample (or upsample) our image to match the window's resolution
 		Framebuffer *inputFramebuffer = supersampledTarget;
-		if (inputFramebuffer->getWidth() != m_ScreenRenderTarget.getWidth() || inputFramebuffer->getHeight() != m_ScreenRenderTarget.getHeight()) {
+		if (inputFramebuffer->getWindowWidth() != m_ScreenRenderTarget.getWindowWidth() || inputFramebuffer->getWindowHeight() != m_ScreenRenderTarget.getWindowHeight()) {
 			glBindFramebuffer(GL_READ_FRAMEBUFFER, supersampledTarget->getFramebuffer());
 			glBindFramebuffer(GL_DRAW_FRAMEBUFFER, m_ScreenRenderTarget.getFramebuffer());
-			glBlitFramebuffer(0, 0, supersampledTarget->getWidth(), supersampledTarget->getHeight(), 0, 0, m_ScreenRenderTarget.getWidth(), m_ScreenRenderTarget.getHeight(), GL_COLOR_BUFFER_BIT, GL_LINEAR);
+			glBlitFramebuffer(0, 0, supersampledTarget->getWindowWidth(), supersampledTarget->getWindowHeight(), 0, 0, m_ScreenRenderTarget.getWindowWidth(), m_ScreenRenderTarget.getWindowHeight(), GL_COLOR_BUFFER_BIT, GL_LINEAR);
 			inputFramebuffer = &m_ScreenRenderTarget;
 		}
 
@@ -252,7 +252,7 @@ namespace arcane {
 	}
 
 	void PostProcessPass::tonemapGammaCorrect(Framebuffer *target, Texture *hdrTexture) {
-		glViewport(0, 0, target->getWidth(), target->getHeight());
+		glViewport(0, 0, target->getWindowWidth(), target->getWindowHeight());
 		m_GLCache->switchShader(m_TonemapGammaCorrectShader);
 		m_GLCache->setDepthTest(false);
 		m_GLCache->setBlend(false);
@@ -270,7 +270,7 @@ namespace arcane {
 	}
 
 	void PostProcessPass::fxaa(Framebuffer *target, Texture *texture) {
-		glViewport(0, 0, target->getWidth(), target->getHeight());
+		glViewport(0, 0, target->getWindowWidth(), target->getWindowHeight());
 		m_GLCache->switchShader(m_FxaaShader);
 		m_GLCache->setDepthTest(false);
 		m_GLCache->setBlend(false);
@@ -279,7 +279,7 @@ namespace arcane {
 		m_GLCache->setStencilTest(false);
 		target->bind();
 
-		m_FxaaShader->setUniform("texel_size", glm::vec2(1.0f / (float)texture->getWidth(), 1.0f / (float)texture->getHeight()));
+		m_FxaaShader->setUniform("texel_size", glm::vec2(1.0f / (float)texture->getWindowWidth(), 1.0f / (float)texture->getWindowHeight()));
 		m_FxaaShader->setUniform("input_texture", 0);
 		texture->bind(0);
 
@@ -287,7 +287,7 @@ namespace arcane {
 	}
 
 	void PostProcessPass::vignette(Framebuffer *target, Texture *texture, Texture *optionalVignetteMask) {
-		glViewport(0, 0, target->getWidth(), target->getHeight());
+		glViewport(0, 0, target->getWindowWidth(), target->getWindowHeight());
 		m_GLCache->switchShader(m_VignetteShader);
 		m_GLCache->setDepthTest(false);
 		m_GLCache->setBlend(false);
@@ -310,7 +310,7 @@ namespace arcane {
 	}
 
 	void PostProcessPass::chromaticAberration(Framebuffer *target, Texture *texture) {
-		glViewport(0, 0, target->getWidth(), target->getHeight());
+		glViewport(0, 0, target->getWindowWidth(), target->getWindowHeight());
 		m_GLCache->switchShader(m_ChromaticAberrationShader);
 		m_GLCache->setDepthTest(false);
 		m_GLCache->setBlend(false);
@@ -320,7 +320,7 @@ namespace arcane {
 		target->bind();
 
 		m_ChromaticAberrationShader->setUniform("intensity", m_ChromaticAberrationIntensity * 100);
-		m_ChromaticAberrationShader->setUniform("texel_size", glm::vec2(1.0f / (float)texture->getWidth(), 1.0f / (float)texture->getHeight()));
+		m_ChromaticAberrationShader->setUniform("texel_size", glm::vec2(1.0f / (float)texture->getWindowWidth(), 1.0f / (float)texture->getWindowHeight()));
 		m_ChromaticAberrationShader->setUniform("input_texture", 0);
 		texture->bind(0);
 
@@ -328,7 +328,7 @@ namespace arcane {
 	}
 
 	void PostProcessPass::filmGrain(Framebuffer *target, Texture *texture) {
-		glViewport(0, 0, target->getWidth(), target->getHeight());
+		glViewport(0, 0, target->getWindowWidth(), target->getWindowHeight());
 		m_GLCache->switchShader(m_FilmGrainShader);
 		m_GLCache->setDepthTest(false);
 		m_GLCache->setBlend(false);
@@ -353,7 +353,7 @@ namespace arcane {
 		m_GLCache->setStencilTest(false);
 
 		// Bloom Bright Pass
-		glViewport(0, 0, m_BrightPassRenderTarget.getWidth(), m_BrightPassRenderTarget.getHeight());
+		glViewport(0, 0, m_BrightPassRenderTarget.getWindowWidth(), m_BrightPassRenderTarget.getWindowHeight());
 		m_BrightPassRenderTarget.bind();
 		m_BrightPassRenderTarget.clear();
 		m_GLCache->switchShader(m_BloomBrightPassShader);
@@ -365,11 +365,11 @@ namespace arcane {
 		// Bloom Gaussian Blur Pass
 		// As the render target gets smaller, we can increase the separable (two-pass) Gaussian kernel size
 		m_GLCache->switchShader(m_BloomGaussianBlurShader);
-		glViewport(0, 0, m_FullRenderTarget.getWidth(), m_FullRenderTarget.getHeight());
+		glViewport(0, 0, m_FullRenderTarget.getWindowWidth(), m_FullRenderTarget.getWindowHeight());
 		m_FullRenderTarget.bind();
 		m_FullRenderTarget.clear();
 		m_BloomGaussianBlurShader->setUniform("isVerticalBlur", true);
-		m_BloomGaussianBlurShader->setUniform("read_offset", glm::vec2(1.0f / (float)m_FullRenderTarget.getWidth(), 1.0f / (float)m_FullRenderTarget.getHeight()));
+		m_BloomGaussianBlurShader->setUniform("read_offset", glm::vec2(1.0f / (float)m_FullRenderTarget.getWindowWidth(), 1.0f / (float)m_FullRenderTarget.getWindowHeight()));
 		m_BloomGaussianBlurShader->setUniform("bloom_texture", 0);
 		m_BrightPassRenderTarget.getColourTexture()->bind(0);
 		m_ActiveScene->getModelRenderer()->NDC_Plane.Draw();
@@ -377,14 +377,14 @@ namespace arcane {
 		m_BloomFullRenderTarget.bind();
 		m_BloomFullRenderTarget.clear();
 		m_BloomGaussianBlurShader->setUniform("isVerticalBlur", false);
-		m_BloomGaussianBlurShader->setUniform("read_offset", glm::vec2(1.0f / (float)m_BloomFullRenderTarget.getWidth(), 1.0f / (float)m_BloomFullRenderTarget.getHeight()));
+		m_BloomGaussianBlurShader->setUniform("read_offset", glm::vec2(1.0f / (float)m_BloomFullRenderTarget.getWindowWidth(), 1.0f / (float)m_BloomFullRenderTarget.getWindowHeight()));
 		m_BloomGaussianBlurShader->setUniform("bloom_texture", 0);
 		m_FullRenderTarget.getColourTexture()->bind(0);
 		m_ActiveScene->getModelRenderer()->NDC_Plane.Draw();
 
 		// Combine our bloom texture with the scene
 		m_GLCache->switchShader(m_BloomComposite);
-		glViewport(0, 0, m_FullRenderTarget.getWidth(), m_FullRenderTarget.getHeight());
+		glViewport(0, 0, m_FullRenderTarget.getWindowWidth(), m_FullRenderTarget.getWindowHeight());
 		m_FullRenderTarget.bind();
 		m_BloomComposite->setUniform("strength", 1.0f);
 		m_BloomComposite->setUniform("scene_texture", 0);

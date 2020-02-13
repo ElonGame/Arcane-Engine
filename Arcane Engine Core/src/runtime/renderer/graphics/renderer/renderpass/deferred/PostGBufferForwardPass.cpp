@@ -12,7 +12,7 @@ namespace arcane {
 	PostGBufferForward::~PostGBufferForward() {}
 
 	LightingPassOutput PostGBufferForward::executeLightingPass(ShadowmapPassOutput &shadowmapData, LightingPassOutput &lightingPassData, ICamera *camera, bool renderOnlyStatic, bool useIBL) {
-		glViewport(0, 0, lightingPassData.outputFramebuffer->getWidth(), lightingPassData.outputFramebuffer->getHeight());
+		glViewport(0, 0, lightingPassData.outputFramebuffer->getWindowWidth(), lightingPassData.outputFramebuffer->getWindowHeight());
 		lightingPassData.outputFramebuffer->bind();
 		m_GLCache->setMultisample(false);
 		m_GLCache->setDepthTest(true);

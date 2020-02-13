@@ -60,8 +60,8 @@ namespace arcane {
 		inline unsigned int getTextureId() const { return m_TextureId; }
 		inline unsigned int getTextureTarget() const { return m_TextureTarget; }
 		inline bool isGenerated() const { return m_TextureId != 0; }
-		inline unsigned int getWidth() const { return m_Width; }
-		inline unsigned int getHeight() const { return m_Height; }
+		inline unsigned int getWindowWidth() const { return m_Width; }
+		inline unsigned int getWindowHeight() const { return m_Height; }
 		inline const TextureSettings& getTextureSettings() const { return m_TextureSettings; }
 	private:
 		void applyTextureSettings();

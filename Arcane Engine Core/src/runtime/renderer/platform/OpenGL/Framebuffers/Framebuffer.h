@@ -39,8 +39,8 @@ namespace arcane {
 		// Getters
 		inline unsigned int getFramebuffer() { return m_FBO; }
 
-		inline unsigned int getWidth() const { return m_Width; }
-		inline unsigned int getHeight() const { return m_Height; }
+		inline unsigned int getWindowWidth() const { return m_Width; }
+		inline unsigned int getWindowHeight() const { return m_Height; }
 
 		inline bool isMultisampled() const { return m_IsMultisampled; }
 

@@ -99,7 +99,7 @@ namespace arcane {
 		m_ConvolutionShader->setUniform("sceneCaptureCubemap", 0);
 
 		m_LightProbeConvolutionFramebuffer.bind();
-		glViewport(0, 0, m_LightProbeConvolutionFramebuffer.getWidth(), m_LightProbeConvolutionFramebuffer.getHeight());
+		glViewport(0, 0, m_LightProbeConvolutionFramebuffer.getWindowWidth(), m_LightProbeConvolutionFramebuffer.getWindowHeight());
 		for (int i = 0; i < 6; i++) {
 			// Setup the camera's view
 			m_CubemapCamera.switchCameraToFace(i);
@@ -130,8 +130,8 @@ namespace arcane {
 		m_ReflectionProbeSamplingFramebuffer.bind();
 		for (int mip = 0; mip < REFLECTION_PROBE_MIP_COUNT; mip++) {
 			// Calculate the size of this mip and resize
-			unsigned int mipWidth = m_ReflectionProbeSamplingFramebuffer.getWidth() >> mip;
-			unsigned int mipHeight = m_ReflectionProbeSamplingFramebuffer.getHeight() >> mip;
+			unsigned int mipWidth = m_ReflectionProbeSamplingFramebuffer.getWindowWidth() >> mip;
+			unsigned int mipHeight = m_ReflectionProbeSamplingFramebuffer.getWindowHeight() >> mip;
 
 			glViewport(0, 0, mipWidth, mipHeight);
 
@@ -190,7 +190,7 @@ namespace arcane {
 		m_ConvolutionShader->setUniform("sceneCaptureCubemap", 0);
 
 		m_LightProbeConvolutionFramebuffer.bind();
-		glViewport(0, 0, m_LightProbeConvolutionFramebuffer.getWidth(), m_LightProbeConvolutionFramebuffer.getHeight());
+		glViewport(0, 0, m_LightProbeConvolutionFramebuffer.getWindowWidth(), m_LightProbeConvolutionFramebuffer.getWindowHeight());
 		for (int i = 0; i < 6; i++) {
 			// Setup the camera's view
 			m_CubemapCamera.switchCameraToFace(i);
@@ -244,8 +244,8 @@ namespace arcane {
 		m_ReflectionProbeSamplingFramebuffer.bind();
 		for (int mip = 0; mip < REFLECTION_PROBE_MIP_COUNT; mip++) {
 			// Calculate the size of this mip and resize
-			unsigned int mipWidth = m_ReflectionProbeSamplingFramebuffer.getWidth() >> mip;
-			unsigned int mipHeight = m_ReflectionProbeSamplingFramebuffer.getHeight() >> mip;
+			unsigned int mipWidth = m_ReflectionProbeSamplingFramebuffer.getWindowWidth() >> mip;
+			unsigned int mipHeight = m_ReflectionProbeSamplingFramebuffer.getWindowHeight() >> mip;
 
 			glViewport(0, 0, mipWidth, mipHeight);
 			

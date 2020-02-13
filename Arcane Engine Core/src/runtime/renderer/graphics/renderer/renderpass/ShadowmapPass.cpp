@@ -24,7 +24,7 @@ namespace arcane {
 	}
 
 	ShadowmapPassOutput ShadowmapPass::generateShadowmaps(ICamera *camera, bool renderOnlyStatic) {
-		glViewport(0, 0, m_ShadowmapFramebuffer->getWidth(), m_ShadowmapFramebuffer->getHeight());
+		glViewport(0, 0, m_ShadowmapFramebuffer->getWindowWidth(), m_ShadowmapFramebuffer->getWindowHeight());
 		m_ShadowmapFramebuffer->bind();
 		m_ShadowmapFramebuffer->clear();
 

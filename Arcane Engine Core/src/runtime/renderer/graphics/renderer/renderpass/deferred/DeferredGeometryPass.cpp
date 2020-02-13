@@ -13,7 +13,7 @@ namespace arcane {
 		m_ModelShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/deferred/PBR_Model_GeometryPass.glsl");
 		m_TerrainShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/deferred/PBR_Terrain_GeometryPass.glsl");
 
-		m_GBuffer = new GBuffer(editor::Window::getRenderResolutionWidth(), editor::Window::getRenderResolutionHeight());
+		m_GBuffer = new GBuffer(editor::Window::getRenderWidth(), editor::Window::getRenderHeight());
 	}
 
 	DeferredGeometryPass::DeferredGeometryPass(Scene3D *scene, GBuffer *customGBuffer) : RenderPass(scene), m_AllocatedGBuffer(false), m_GBuffer(customGBuffer) {
@@ -28,7 +28,7 @@ namespace arcane {
 	}
 
 	GeometryPassOutput DeferredGeometryPass::executeGeometryPass(ICamera *camera, bool renderOnlyStatic) {
-		glViewport(0, 0, m_GBuffer->getWidth(), m_GBuffer->getHeight());
+		glViewport(0, 0, m_GBuffer->getWindowWidth(), m_GBuffer->getWindowHeight());
 		m_GBuffer->bind();
 		m_GBuffer->clear();
 		m_GLCache->setBlend(false);

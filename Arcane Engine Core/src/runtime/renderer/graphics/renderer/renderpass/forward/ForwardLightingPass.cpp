@@ -9,7 +9,7 @@ namespace arcane {
 		m_ModelShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/forward/PBR_Model.glsl");
 		m_TerrainShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/forward/PBR_Terrain.glsl");
 
-		m_Framebuffer = new Framebuffer(editor::Window::getRenderResolutionWidth(), editor::Window::getRenderResolutionHeight(), shouldMultisample);
+		m_Framebuffer = new Framebuffer(editor::Window::getRenderWidth(), editor::Window::getRenderHeight(), shouldMultisample);
 		m_Framebuffer->addColorTexture(FloatingPoint16).addDepthStencilRBO(NormalizedDepthStencil).createFramebuffer();
 	}
 
@@ -25,7 +25,7 @@ namespace arcane {
 	}
 
 	LightingPassOutput ForwardLightingPass::executeLightingPass(ShadowmapPassOutput &shadowmapData, ICamera *camera, bool renderOnlyStatic, bool useIBL) {
-		glViewport(0, 0, m_Framebuffer->getWidth(), m_Framebuffer->getHeight());
+		glViewport(0, 0, m_Framebuffer->getWindowWidth(), m_Framebuffer->getWindowHeight());
 		m_Framebuffer->bind();
 		m_Framebuffer->clear();
 		if (m_Framebuffer->isMultisampled()) {

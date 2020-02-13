@@ -4,10 +4,10 @@
 namespace arcane {
 	namespace editor {
 		// Static declarations
-		bool Window::s_HideCursor;
-		int Window::s_Width; int Window::s_Height;
+		bool editor::Window::s_HideCursor;
+		int editor::Window::s_Width; int editor::Window::s_Height;
 
-		Window::Window(const char* title, int width, int height) {
+		editor::Window::Window(const char* title, int width, int height) {
 			m_Title = title;
 			s_Width = width;
 			s_Height = height;
@@ -20,7 +20,7 @@ namespace arcane {
 			}
 		}
 
-		Window::~Window() {
+		editor::Window::~Window() {
 			glfwDestroyWindow(m_Window);
 			glfwTerminate();
 			
@@ -30,7 +30,7 @@ namespace arcane {
 			ImGui::DestroyContext();
 		}
 
-		bool Window::init() {
+		bool editor::Window::init() {
 			// Needed in order to establish the correct OpenGL context (also enabled the usage of RenderDoc along with the window hints)
 			glewExperimental = true;
 
@@ -124,7 +124,7 @@ namespace arcane {
 			return 1;
 		}
 
-		void Window::update() {
+		void editor::Window::update() {
 			// Error reporting
 			GLenum error = glGetError();
 			if (error != GL_NO_ERROR) {
@@ -139,20 +139,20 @@ namespace arcane {
 			glfwPollEvents();
 		}
 
-		void Window::clear() {
+		void editor::Window::clear() {
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 		}
 
-		void Window::bind() {
+		void editor::Window::bind() {
 			glBindFramebuffer(GL_FRAMEBUFFER, 0);
 		}
 
-		bool Window::closed() const {
+		bool editor::Window::closed() const {
 			return glfwWindowShouldClose(m_Window);
 		}
 
 		// Sets the Window's Size to the Primary Monitor's Resolution
-		void Window::setFullscreenResolution() {
+		void editor::Window::setFullscreenResolution() {
 			const GLFWvidmode* mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
 			s_Width = mode->width;
 			s_Height = mode->height;

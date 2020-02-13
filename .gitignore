@@ -289,7 +289,11 @@ __pycache__/
 *.xsd.cs
 
 # Log file
+<<<<<<< HEAD
 logged_files/
 
 # .orig files
 *.orig
+=======
+logged_files/
+>>>>>>> 46db159818cbfc81e26afd1a0ac304367c5695ad

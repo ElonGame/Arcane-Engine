@@ -9,7 +9,6 @@
 #include <editor/utils/loaders/TextureLoader.h>
 
 int main() {
-
 	// This should be at an entry point of the application
 #if _DEBUG
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
@@ -24,8 +23,8 @@ int main() {
 	arcane::editor::InputManager manager;
 
 	// Prepare the UI
-	arcane::editor::RuntimePane runtimePane(glm::vec2(270.0f, 100.0f));
-	arcane::editor::DebugPane debugPane(glm::vec2(270.0f, 205.0f));
+	arcane::editor::RuntimePane runtimePane(glm::vec2(270.0f, 175.0f));
+	arcane::editor::DebugPane debugPane(glm::vec2(270.0f, 400.0f));
 
 	// Initialize the renderer
 	renderer.init();

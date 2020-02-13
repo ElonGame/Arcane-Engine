@@ -4,10 +4,10 @@
 namespace arcane {
 	namespace editor {
 		// Static declarations
-		std::unordered_map<std::size_t, Shader*> ShaderLoader::s_ShaderCache;
-		std::hash<std::string> ShaderLoader::s_Hasher;
+		std::unordered_map<std::size_t, Shader*> editor::ShaderLoader::s_ShaderCache;
+		std::hash<std::string> editor::ShaderLoader::s_Hasher;
 
-		Shader* ShaderLoader::loadShader(const std::string& path) {
+		Shader* editor::ShaderLoader::loadShader(const std::string& path) {
 			std::size_t hash = s_Hasher(path);
 
 			// Check the cache

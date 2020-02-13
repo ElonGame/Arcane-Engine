@@ -7,15 +7,22 @@ namespace arcane {
 		bool* DebugPane::s_FxaaEnabled = nullptr;
 		float* DebugPane::s_GammaCorrectionValue = nullptr;
 		float* DebugPane::s_ExposureValue = nullptr;
+		float* DebugPane::s_BloomThresholdValue = nullptr;
 		bool* DebugPane::s_SsaoEnabled = nullptr;
 		float* DebugPane::s_SsaoSampleRadius = nullptr;
 		float* DebugPane::s_SsaoStrength = nullptr;
+		bool* DebugPane::s_VignetteEnabled = nullptr;
+		float* DebugPane::s_VignetteIntensity = nullptr;
+		bool* DebugPane::s_ChromaticAberrationEnabled = nullptr;
+		float* DebugPane::s_ChromaticAberrationIntensity = nullptr;
+		bool* DebugPane::s_FilmGrainEnabled = nullptr;
+		float* DebugPane::s_FilmGrainIntensity = nullptr;
 		bool DebugPane::s_WireframeMode = false;
 
-		DebugPane::DebugPane(glm::vec2& panePosition) : Pane(std::string("Debug Controls"), panePosition) {
+		editor::DebugPane::DebugPane(glm::vec2& panePosition) : Pane(std::string("Debug Controls"), panePosition) {
 		}
 
-		void DebugPane::setupPaneObjects() {
+		void editor::DebugPane::setupPaneObjects() {
 			if (s_CameraPosition != nullptr)
 				ImGui::Text("Camera Pos x:%.1f y:%.1f z:%.1f", s_CameraPosition->x, s_CameraPosition->y, s_CameraPosition->z);
 			if (s_FxaaEnabled != nullptr)

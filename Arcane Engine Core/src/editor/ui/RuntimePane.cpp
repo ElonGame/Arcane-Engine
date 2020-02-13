@@ -3,15 +3,15 @@
 
 namespace arcane {
 	namespace editor {
-		float RuntimePane::s_ShadowmapTimer = 0.0f;
-		float RuntimePane::s_SsaoTimer = 0.0f;
-		float RuntimePane::s_FxaaTimer = 0.0f;
+		float editor::RuntimePane::s_ShadowmapTimer = 0.0f;
+		float editor::RuntimePane::s_SsaoTimer = 0.0f;
+		float editor::RuntimePane::s_FxaaTimer = 0.0f;
 
-		RuntimePane::RuntimePane(glm::vec2& panePosition) : Pane(std::string("Runtime Analytics"), panePosition), m_ValueOffset(0), m_MaxFrametime(0), m_Frametimes()
+		editor::RuntimePane::RuntimePane(glm::vec2& panePosition) : Pane(std::string("Runtime Analytics"), panePosition), m_ValueOffset(0), m_MaxFrametime(0), m_Frametimes()
 		{
 		}
 
-		void RuntimePane::setupPaneObjects() {
+		void editor::RuntimePane::setupPaneObjects() {
 			float frametime = 1000.0f / ImGui::GetIO().Framerate;
 			ImGui::Text("Frametime: %.3f ms (FPS %.1f)", frametime, ImGui::GetIO().Framerate);
 #if DEBUG_ENABLED

@@ -42,7 +42,6 @@ namespace arcane {
 	}
 
 	void ForwardProbePass::generateBRDFLUT() {
-
 		Shader *brdfIntegrationShader = editor::ShaderLoader::loadShader("src/runtime/renderer/shaders/BRDF_Integration.glsl");
 		ModelRenderer *modelRenderer = m_ActiveScene->getModelRenderer();
 		

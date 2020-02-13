@@ -272,6 +272,31 @@
     <ClInclude Include="src\vendor\spdlog\include\spdlog\version.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="src\runtime\renderer\shaders\post_process\bloom\BloomBrightPass.glsl" />
+    <None Include="src\runtime\renderer\shaders\post_process\bloom\BloomGaussianBlur.glsl" />
+    <None Include="src\runtime\renderer\shaders\BRDF_Integration.glsl" />
+    <None Include="src\runtime\renderer\shaders\compute\frame_luminance.comp" />
+    <None Include="src\runtime\renderer\shaders\compute\Scene_Luminance.glsl" />
+    <None Include="src\runtime\renderer\shaders\deferred\PBR_LightingPass.glsl" />
+    <None Include="src\runtime\renderer\shaders\deferred\PBR_Model_GeometryPass.glsl" />
+    <None Include="src\runtime\renderer\shaders\deferred\PBR_Terrain_GeometryPass.glsl" />
+    <None Include="src\runtime\renderer\shaders\directionalLight.frag" />
+    <None Include="src\runtime\renderer\shaders\forward\PBR_Model.glsl" />
+    <None Include="src\runtime\renderer\shaders\forward\PBR_Terrain.glsl" />
+    <None Include="src\runtime\renderer\shaders\post_process\bloom\Composite.glsl" />
+    <None Include="src\runtime\renderer\shaders\post_process\chromatic_aberration\ChromaticAberration.glsl" />
+    <None Include="src\runtime\renderer\shaders\post_process\Copy.glsl" />
+    <None Include="src\runtime\renderer\shaders\post_process\film_grain\FilmGrain.glsl" />
+    <None Include="src\runtime\renderer\shaders\post_process\fxaa\FXAA.glsl" />
+    <None Include="src\runtime\renderer\shaders\LightProbe_Convolution.glsl" />
+    <None Include="src\runtime\renderer\shaders\post_process\smaa\SMAA.glsl" />
+    <None Include="src\runtime\renderer\shaders\post_process\vignette\Vignette.glsl" />
+    <None Include="src\runtime\renderer\shaders\TonemapGammaCorrect.glsl" />
+    <None Include="src\runtime\renderer\shaders\ReflectionProbe_ImportanceSampling.glsl" />
+    <None Include="src\runtime\renderer\shaders\Shadowmap_Generation.glsl" />
+    <None Include="src\runtime\renderer\shaders\Skybox.glsl" />
+    <None Include="src\runtime\renderer\shaders\post_process\ssao\SSAO.glsl" />
+    <None Include="src\runtime\renderer\shaders\post_process\ssao\SSAO_Blur.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\awesomeface.png" />

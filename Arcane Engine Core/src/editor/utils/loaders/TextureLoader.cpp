@@ -5,12 +5,12 @@ namespace arcane {
 	namespace editor {
 
 		// Static declarations
-		std::unordered_map<std::string, Texture*> TextureLoader::m_TextureCache;
-		Texture* TextureLoader::s_DefaultAlbedo;
-		Texture* TextureLoader::s_DefaultNormal;
-		Texture* TextureLoader::s_WhiteTexture; Texture* TextureLoader::s_BlackTexture;
+		std::unordered_map<std::string, Texture*> editor::TextureLoader::m_TextureCache;
+		Texture* editor::TextureLoader::s_DefaultAlbedo;
+		Texture* editor::TextureLoader::s_DefaultNormal;
+		Texture* editor::TextureLoader::s_WhiteTexture; Texture* editor::TextureLoader::s_BlackTexture;
 
-		Texture* TextureLoader::load2DTexture(std::string& path, TextureSettings* settings) {
+		Texture* editor::TextureLoader::load2DTexture(std::string& path, TextureSettings* settings) {
 			// Check the cache
 			auto iter = m_TextureCache.find(path);
 			if (iter != m_TextureCache.end()) {
@@ -49,7 +49,7 @@ namespace arcane {
 			return m_TextureCache[path];
 		}
 
-		Cubemap* TextureLoader::loadCubemapTexture(const std::string& right, const std::string& left, const std::string& top, const std::string& bottom, const std::string& back, const std::string& front, CubemapSettings* settings) {
+		Cubemap* editor::TextureLoader::loadCubemapTexture(const std::string& right, const std::string& left, const std::string& top, const std::string& bottom, const std::string& back, const std::string& front, CubemapSettings* settings) {
 			Cubemap* cubemap = new Cubemap();
 			if (settings != nullptr)
 				cubemap->setCubemapSettings(*settings);
@@ -82,7 +82,7 @@ namespace arcane {
 			return cubemap;
 		}
 
-		void TextureLoader::initializeDefaultTextures() {
+		void editor::TextureLoader::initializeDefaultTextures() {
 			// Setup texture and minimal filtering because they are 1x1 textures so they require none
 			TextureSettings srgbTextureSettings;
 			srgbTextureSettings.IsSRGB = true;

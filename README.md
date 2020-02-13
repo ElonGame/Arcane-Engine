@@ -26,6 +26,7 @@ Arcane Engine is a real-time, physically based renderer built with OpenGL. A lar
 - Directional Light Shadowmapping
 - Skybox Support
 - Terrain Material Blending
+- Post Processing (Film Grain, Chromatic Aberration, Vignette)
 
 ## Engine
 - OpenGL 4.3+
@@ -50,7 +51,7 @@ I plan on adding many different features to the forward & deferred renderers. He
 1. Decals
 1. Particles
 1. SSR
-1. Volumetric Lighting
+1. Volumetric Effects
 1. Reverse Z Buffer
 1. Virtual Texture System (Terrain)
 

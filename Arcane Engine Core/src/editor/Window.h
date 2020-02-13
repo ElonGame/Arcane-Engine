@@ -20,10 +20,10 @@ namespace arcane {
 			static void bind();
 
 			static inline bool getHideCursor() { return s_HideCursor; }
-			static inline int getWidth() { return s_Width; }
-			static inline int getHeight() { return s_Height; }
-			static inline int getResolutionWidth() { return (int)(s_Width * SUPERSAMPLING_FACTOR); }
-			static inline int getResolutionHeight() { return (int)(s_Height * SUPERSAMPLING_FACTOR); }
+			static inline int getWindowWidth() { return s_Width; }
+			static inline int getWindowHeight() { return s_Height; }
+			static inline int getRenderWidth() { return (int)(s_Width * SUPERSAMPLING_FACTOR); }
+			static inline int getRenderHeight() { return (int)(s_Height * SUPERSAMPLING_FACTOR); }
 		private:
 			bool init();
 

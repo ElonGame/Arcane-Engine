@@ -44,11 +44,11 @@
 #ifdef _DEBUG
 
 // CRT Memory debugger
-#define _CRTDBG_MAP_ALLOC
-#include <stdlib.h>
-#include <crtdbg.h>
-#define DBG_NEW new (_NORMAL_BLOCK , __FILE__ , __LINE__)
-#define new DBG_NEW
+//#define _CRTDBG_MAP_ALLOC
+//#include <stdlib.h>
+//#include <crtdbg.h>
+//#define DBG_NEW new (_NORMAL_BLOCK , __FILE__ , __LINE__)
+//#define new DBG_NEW
 
 // Adding renderdoc api
 #include <renderdoc/api/app/renderdoc_app.h>

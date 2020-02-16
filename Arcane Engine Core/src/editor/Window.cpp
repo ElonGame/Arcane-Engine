@@ -1,13 +1,12 @@
 #include "pch.h"
 #include "Window.h"
 
-namespace arcane {
-	namespace editor {
+namespace arcane::editor {
 		// Static declarations
-		bool editor::Window::s_HideCursor;
-		int editor::Window::s_Width; int editor::Window::s_Height;
+		bool Window::s_HideCursor;
+		int Window::s_Width; int Window::s_Height;
 
-		editor::Window::Window(const char* title, int width, int height) {
+		Window::Window(const char* title, int width, int height) {
 			m_Title = title;
 			s_Width = width;
 			s_Height = height;
@@ -20,7 +19,7 @@ namespace arcane {
 			}
 		}
 
-		editor::Window::~Window() {
+		Window::~Window() {
 			glfwDestroyWindow(m_Window);
 			glfwTerminate();
 			
@@ -30,7 +29,7 @@ namespace arcane {
 			ImGui::DestroyContext();
 		}
 
-		bool editor::Window::init() {
+		bool Window::init() {
 			// Needed in order to establish the correct OpenGL context (also enabled the usage of RenderDoc along with the window hints)
 			glewExperimental = true;
 
@@ -221,4 +220,3 @@ namespace arcane {
 				type, severity, message);
 		}
 	}
-}
